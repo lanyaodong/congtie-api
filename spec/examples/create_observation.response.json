@@ -1,0 +1,19 @@
+
+{
+  "id": "a1d2b6b9-8b8e-460b-9c73-204d950db22e",
+  "user_id": "11111111-1111-1111-1111-111111111111",
+  "biomarker_code": "rhr",
+  "observation_medium": "device",
+  "sample_type": null,
+  "sample_method": "wearable",
+  "sampling_context": {
+    "state": "resting"
+  },
+  "value_num": 58,
+  "value_text": null,
+  "value_json": {},
+  "unit": "bpm",
+  "measured_at": "2026-03-04T07:26:13Z",
+  "freshness_state": "fresh",
+  "accuracy_tier": "standard"
+}
