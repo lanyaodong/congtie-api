@@ -1,5 +1,13 @@
 .env
+.env.*
+!.env.example
 .venv/
+.pnpm-store/
 __pycache__/
 *.pyc
+.pytest_cache/
+node_modules/
+.vinext/
+.next/
+coverage/
 .DS_Store
