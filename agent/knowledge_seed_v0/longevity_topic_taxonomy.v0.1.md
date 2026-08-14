@@ -729,6 +729,47 @@ This topic explains the concept.
 
 Private user data itself does not belong in this taxonomy.
 
+## T01.07 Longevity Information Library Concept 长寿信息库概念
+
+Scope:
+
+* what 长寿信息库 is and why it exists
+* Congtie's general, reusable longevity information external memory
+* continuously organized, reviewed, and updated global healthspan information
+* knowledge, action resources, progress and viewpoints, education, evidence, sources, and governance boundaries
+* human-readable and agent-readable information
+* strict separation from 用户健康信息库
+* not a private user health data repository
+* not a static encyclopedia, medical database, marketplace, or automatic recommendation engine
+* not diagnosis, treatment, prescribing, or clinical decision support
+
+Default information layer:
+
+```text
+knowledge
+```
+
+Allowed content types:
+
+```text
+knowledge_entry
+education_article
+glossary_entry
+source_note
+```
+
+Core relationship:
+
+```text
+Longevity Information Library / 长寿信息库
+= general, reusable longevity context
+
+User Health Information Library / 用户健康信息库
+= private, user-specific, permission-gated health context
+```
+
+The two information foundations may support personalized explanation and safe action only within approved evidence, safety, review, runtime, and user-permission boundaries.
+
 ---
 
 # T02 Longevity Strategy 长寿策略

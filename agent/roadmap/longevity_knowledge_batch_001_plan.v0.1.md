@@ -57,7 +57,7 @@ Priority:
 quality > quantity
 ```
 
-The six requested group targets total 56 candidate entries. Batch 001 therefore begins with a 56-entry production inventory and aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control.
+The six requested group targets total 56 candidate entries. Batch 001 therefore uses a 56-entry candidate ceiling and aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control. Founder-approved entries that have already completed the candidate workflow are recorded separately as completed foundation assets rather than counted again as open production candidates.
 
 The batch should establish enough breadth for Congtie to explain:
 
@@ -338,9 +338,17 @@ Topic IDs must exist in the taxonomy. Multiple topic IDs are allowed, but `prima
 
 Target: 8 candidate entries.
 
+Completed foundation and consolidation anchor:
+
+| Entry ID | Canonical Title | Primary Topic | Status | Consolidation Decision |
+|---|---|---|---|---|
+| KN-T0101-0001 | 什么是健康寿命 | T01.01 | approved | This canonical entry already covers lifespan, healthspan, their distinction, and the HALE boundary. Do not create a separate "lifespan vs healthspan" entry; different user phrasings belong to future retrieval and query expansion. |
+
+The Group A candidate slot that could otherwise have produced a duplicate lifespan-versus-healthspan object is assigned to `KN-T0107-0001`, the Longevity Information Library concept. This is a substitution and consolidation decision, not scope expansion.
+
 | Priority | Planned Entry ID | Working Title | Primary Topic | Content Type | Information Layer |
 |---|---|---|---|---|---|
-| P0 | KN-T0101-0001 | 什么是健康寿命 | T01.01 | knowledge_entry | knowledge |
+| P0 | KN-T0107-0001 | 长寿信息库是什么 | T01.07 | knowledge_entry | knowledge |
 | P0 | KN-T0102-0001 | Congtie 的长寿目标：延长健康寿命 | T01.02 | knowledge_entry | knowledge |
 | P0 | KN-T0104-0001 | 从身体黑箱到身体透明 | T01.04 | knowledge_entry | knowledge |
 | P0 | KN-T0105-0001 | Congtie 的角色与非临床边界 | T01.05 | knowledge_entry | knowledge |
@@ -349,7 +357,7 @@ Target: 8 candidate entries.
 | P1 | ED-T0800-0001 | 如何理解进展与观点 | T08.00 | education_article | education |
 | P1 | ED-T0907-0001 | 如何理解证据等级与信源类型 | T09.07 | education_article | education |
 
-Group A establishes the product mental model, public/private information boundary, core safety posture, and the minimum interpretation guidance needed for T08 and T09 coverage.
+Group A establishes the product mental model, the relationship between 长寿信息库 and 用户健康信息库, the public/private information boundary, core safety posture, and the minimum interpretation guidance needed for T08 and T09 coverage.
 
 ### 6.2 Group B: Longevity Strategy
 
@@ -486,6 +494,8 @@ Existing `KS-RESOURCE-*` drafts may be used as reviewed source material. Before 
 | **Total planned candidates** | **56** |
 
 Batch completion target remains approximately 50 accepted entries. A final count between 50 and 56 is acceptable when reductions are caused by evidence gaps, consolidation, duplication, or safety review.
+
+The T01.01 consolidation and T01.07 substitution do not increase the 56-candidate ceiling. `KN-T0101-0001` remains the approved canonical healthspan object and is not duplicated as a new open candidate.
 
 ---
 
