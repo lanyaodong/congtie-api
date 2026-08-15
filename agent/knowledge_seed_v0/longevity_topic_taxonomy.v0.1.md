@@ -2084,6 +2084,50 @@ Scope:
 * retrieval tags
 * mapping validation
 
+## T09.12 Medical Fields and Practice Models 医学领域与实践模式
+
+Scope:
+
+* medical fields
+* medical disciplines
+* professional practice frameworks
+* practice models
+* clinical or health-care approaches
+* field scope and healthspan relevance
+* relationships with other medical fields
+* professional maturity and recognition status
+* what a field or practice-model label can and cannot establish
+* separate evidence, safety, and regulatory review for specific interventions
+
+Default information layer:
+
+```text
+knowledge
+```
+
+Allowed content types:
+
+```text
+knowledge_entry
+education_article
+glossary_entry
+source_note
+```
+
+Boundary:
+
+T09.12 explains medical fields and practice models as concepts. It must not become:
+
+* a disease taxonomy
+* a treatment directory
+* a hospital or clinic directory
+* a doctor directory
+* a product or service recommendation directory
+* an intervention effectiveness score
+* a medical institution rating system
+
+A field or practice-model label does not establish the evidence, safety, approval status, or personal suitability of a specific test, product, service, or intervention. Those claims require separate review.
+
 ---
 
 # T10 Pet Longevity 宠物长寿

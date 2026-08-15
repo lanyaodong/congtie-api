@@ -57,7 +57,7 @@ Priority:
 quality > quantity
 ```
 
-The six requested group targets total 56 candidate entries. Batch 001 therefore uses a 56-entry candidate ceiling and aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control. Founder-approved entries that have already completed the candidate workflow are recorded separately as completed foundation assets rather than counted again as open production candidates.
+The original six requested group targets total 56 candidate entries. Founder-approved Group G adds four foundational medical-field and practice-model candidates, expanding the current candidate pool from 56 to 60. Batch 001 still aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control. This candidate-pool expansion does not increase the intended final publication target. Founder-approved entries that have already completed the candidate workflow are recorded separately as completed foundation assets rather than counted again as open production candidates.
 
 The batch should establish enough breadth for Congtie to explain:
 
@@ -299,7 +299,7 @@ High-risk or experimental Action Resources remain R0 unless a future explicit go
 
 Selected awareness entries from these categories may be introduced when they are important for user understanding and can satisfy the stricter review rules above.
 
-Any addition should be handled through Founder-reviewed substitution, consolidation, or prioritization within the existing candidate inventory. This clarification does not change the approximately 50-entry target, T01-T09 coverage, or the current 56-candidate planning ceiling.
+Any addition should be handled through Founder-reviewed substitution, consolidation, prioritization, or an explicit candidate-pool decision. The Founder-approved foundational medical-field additions in Group G expand the candidate pool from 56 to 60 because the current plan does not contain four clear and safe substitution slots. This does not change the approximately 50-entry target or T01-T09 coverage.
 
 ---
 
@@ -481,7 +481,22 @@ Medication and high-risk topics should normally use knowledge, progress and view
 
 Existing `KS-RESOURCE-*` drafts may be used as reviewed source material. Before creating an `AR-*` entry, production must perform a duplicate and lineage check so that the new library does not create two canonical copies of the same resource.
 
-### 6.7 Planned Count Summary
+### 6.7 Group G: Foundational Medical Fields and Practice Models
+
+Target: 4 candidate entries.
+
+These entries explain field and practice-model labels that proactive longevity users commonly encounter. They are concept education, not intervention endorsement. Each specific test, product, service, therapy, or protocol mentioned under one of these labels still requires separate evidence, safety, regulatory, and actionability review.
+
+| Priority | Planned Entry ID | Working Title | English Title | Primary Topic | Content Type | Information Layer |
+|---|---|---|---|---|---|---|
+| P0 | KN-T0912-0001 | 长寿医学是什么 | What Is Longevity Medicine? | T09.12 | knowledge_entry | knowledge |
+| P0 | KN-T0912-0002 | 生活方式医学是什么 | What Is Lifestyle Medicine? | T09.12 | knowledge_entry | knowledge |
+| P1-high | KN-T0912-0003 | 功能医学是什么 | What Is Functional Medicine? | T09.12 | knowledge_entry | knowledge |
+| P1-high | KN-T0912-0004 | 再生医学是什么 | What Is Regenerative Medicine? | T09.12 | knowledge_entry | knowledge |
+
+No existing candidate is replaced or removed. The four concepts do not duplicate an existing field-definition candidate, and removing foundational, safety-critical, measurement, body-system, medication, supplement, or high-risk awareness candidates solely to preserve the previous number would weaken the plan. This is therefore a Founder-approved candidate-pool expansion from 56 to 60, while the final target remains approximately 50 accepted entries.
+
+### 6.8 Planned Count Summary
 
 | Group | Candidate Count |
 |---|---:|
@@ -491,11 +506,12 @@ Existing `KS-RESOURCE-*` drafts may be used as reviewed source material. Before 
 | Group D: Measurement and Records | 8 |
 | Group E: Lifestyle Foundations | 12 |
 | Group F: Action Resources | 5 |
-| **Total planned candidates** | **56** |
+| Group G: Foundational Medical Fields and Practice Models | 4 |
+| **Total planned candidates** | **60** |
 
-Batch completion target remains approximately 50 accepted entries. A final count between 50 and 56 is acceptable when reductions are caused by evidence gaps, consolidation, duplication, or safety review.
+Batch completion target remains approximately 50 accepted entries. A final count between 50 and 60 is acceptable when reductions are caused by evidence gaps, consolidation, duplication, prioritization, or safety review.
 
-The T01.01 consolidation and T01.07 substitution do not increase the 56-candidate ceiling. `KN-T0101-0001` remains the approved canonical healthspan object and is not duplicated as a new open candidate.
+The T01.01 consolidation and T01.07 substitution do not increase the original 56-candidate inventory. `KN-T0101-0001` remains the approved canonical healthspan object and is not duplicated as a new open candidate. Group G is the only expansion in this update and increases the current candidate pool from 56 to 60 without changing the approximately 50-entry final target.
 
 ---
 
@@ -699,7 +715,7 @@ Publication requires an explicit transition and any future publication/index/run
 
 Batch 001 is complete when:
 
-- approximately 50 entries have been created, with 56 as the maximum current candidate inventory
+- approximately 50 entries have been created, with 60 as the maximum current candidate inventory
 - every completed entry follows the Knowledge Item Schema
 - every completed entry passes `validate_longevity_knowledge_item.py`
 - every completed entry maps to valid taxonomy topics
@@ -716,7 +732,7 @@ Batch 001 is complete when:
 - no private user health information is stored in the public knowledge library
 - no product marketplace, purchase recommendation, or hidden commercial conversion is introduced
 
-Quality and safety take precedence over reaching 56 entries.
+Quality and safety take precedence over reaching 60 entries.
 
 ---
 
