@@ -677,7 +677,7 @@ Do not place strategy items here.
 
 Strategy items belong to T02.
 
-## T01.03 Longevity Mindset 长寿心智
+## T01.03 Longevity Mindset 长寿心态
 
 Scope:
 
@@ -849,7 +849,7 @@ Scope:
 * no biological age scoring engine in v0
 * no age-reversal protocol
 
-## T02.04 Measurement-Explanation-Action-Iteration 测量—解释—行动—迭代
+## T02.04 Measurement-Interpretation-Action-Iteration 测量—解读—行动—迭代
 
 Scope:
 
@@ -870,6 +870,45 @@ Scope:
 * optional measurement resources
 * no clinical order
 * no treatment protocol
+
+## T02.06 Longevity Strategy Concept 长寿策略概念
+
+Scope:
+
+* what longevity strategy means
+* distinction between longevity goal and longevity strategy
+* relationship between longevity mindset and longevity strategy
+* prevent premature mortality
+* maintain physical capability
+* maintain cognitive capability
+* slow biological aging
+* measurement-interpretation-action-remeasurement feedback loop
+* strategy updates as age, health context, evidence, and personal goals change
+* distinction between general longevity strategy and a personalized longevity plan
+
+This topic is not:
+
+* a fixed checklist
+* a supplement list
+* a medical prescription
+* a product or service recommendation directory
+* a one-time health plan
+* a personal lifespan prediction model
+* a promise to live to a specific age
+
+Default information layer:
+
+```text
+knowledge
+```
+
+Allowed content types:
+
+```text
+knowledge_entry
+education_article
+glossary_entry
+```
 
 ---
 
