@@ -4,7 +4,7 @@ Version: v0.1
 Project: Congtie  
 Status: Draft  
 Owner: Congtie Agent Team  
-Last Updated: 2026-08-07
+Last Updated: 2026-08-19
 
 ---
 
@@ -57,7 +57,7 @@ Priority:
 quality > quantity
 ```
 
-The original six requested group targets total 56 candidate entries. Founder-approved Group G adds four foundational medical-field and practice-model candidates, expanding the candidate pool from 56 to 60. Founder-approved allocation of the previously unallocated T01.03 Longevity Mindset / 长寿心态 leaf adds `KN-T0103-0001` as a candidate, expanding the candidate pool from 60 to 61. Founder-approved allocation of the T02.06 Longevity Strategy Concept / 长寿策略概念 leaf adds `KN-T0206-0001`, expanding the current candidate pool from 61 to 62. Batch 001 still aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control. This candidate-pool expansion does not increase the intended final publication target. Founder-approved entries that have already completed the candidate workflow are recorded separately as completed foundation assets rather than counted again as open production candidates.
+The original six requested group targets total 56 candidate entries. Founder-approved Group G adds four foundational medical-field and practice-model candidates, expanding the candidate pool from 56 to 60. Founder-approved allocation of the previously unallocated T01.03 Longevity Mindset / 长寿心态 leaf adds `KN-T0103-0001` as a candidate, expanding the candidate pool from 60 to 61. Founder-approved allocation of the T02.06 Longevity Strategy Concept / 长寿策略概念 leaf adds `KN-T0206-0001`, expanding the candidate pool from 61 to 62. Founder-approved allocation of `KN-T0403-0002` for baselines, longitudinal trends, measurement error, and biological variation expands the current candidate pool from 62 to 63. Batch 001 still aims to finish approximately 50 high-quality entries after duplicate review, consolidation, evidence review, and scope control. This candidate-pool expansion does not increase the intended final publication target. Founder-approved entries that have already completed the candidate workflow are recorded separately as completed foundation assets rather than counted again as open production candidates.
 
 The batch should establish enough breadth for Congtie to explain:
 
@@ -404,11 +404,12 @@ Body-system entries explain concepts and relevant context. They must not diagnos
 
 ### 6.4 Group D: Measurement and Records
 
-Target: 8 candidate entries.
+Target: 9 candidate entries.
 
 | Priority | Planned Entry ID | Working Title | Primary Topic | Content Type | Information Layer |
 |---|---|---|---|---|---|
 | P0 | KN-T0403-0001 | 什么是生物标志物 | T04.03 | knowledge_entry | knowledge |
+| P0 | KN-T0403-0002 | 如何理解基线、长期趋势、测量误差与生物波动 | T04.03 | knowledge_entry | knowledge |
 | P0 | KN-T0401-0001 | 为什么保留原始检测报告 | T04.01 | knowledge_entry | knowledge |
 | P0 | KN-T0404-0001 | 数据新鲜度为什么重要 | T04.04 | knowledge_entry | knowledge |
 | P0 | KN-T0405-0001 | 为什么单位不能省略或猜测 | T04.05 | knowledge_entry | knowledge |
@@ -505,15 +506,15 @@ No existing candidate is replaced or removed. The four concepts do not duplicate
 | Group A: Congtie Foundation | 9 |
 | Group B: Longevity Strategy | 6 |
 | Group C: Six Body Systems | 18 |
-| Group D: Measurement and Records | 8 |
+| Group D: Measurement and Records | 9 |
 | Group E: Lifestyle Foundations | 12 |
 | Group F: Action Resources | 5 |
 | Group G: Foundational Medical Fields and Practice Models | 4 |
-| **Total planned candidates** | **62** |
+| **Total planned candidates** | **63** |
 
-Batch completion target remains approximately 50 accepted entries. A final count between 50 and 62 is acceptable when reductions are caused by evidence gaps, consolidation, duplication, prioritization, or safety review.
+Batch completion target remains approximately 50 accepted entries. A final count between 50 and 63 is acceptable when reductions are caused by evidence gaps, consolidation, duplication, prioritization, or safety review.
 
-The T01.01 consolidation and T01.07 substitution do not increase the original 56-candidate inventory. `KN-T0101-0001` remains the approved canonical healthspan object and is not duplicated as a new open candidate. Group G expanded the pool from 56 to 60. The separately Founder-approved T01.03 candidate allocation adds `KN-T0103-0001` and expands the pool from 60 to 61. The Founder-approved T02.06 strategy-concept allocation adds `KN-T0206-0001` and expands the current pool from 61 to 62 without changing the approximately 50-entry final target.
+The T01.01 consolidation and T01.07 substitution do not increase the original 56-candidate inventory. `KN-T0101-0001` remains the approved canonical healthspan object and is not duplicated as a new open candidate. Group G expanded the pool from 56 to 60. The separately Founder-approved T01.03 candidate allocation adds `KN-T0103-0001` and expands the pool from 60 to 61. The Founder-approved T02.06 strategy-concept allocation adds `KN-T0206-0001` and expands the pool from 61 to 62. The Founder-approved `KN-T0403-0002` allocation expands the current pool from 62 to 63 without changing the approximately 50-entry final target.
 
 ---
 
@@ -717,7 +718,7 @@ Publication requires an explicit transition and any future publication/index/run
 
 Batch 001 is complete when:
 
-- approximately 50 entries have been created, with 62 as the maximum current candidate inventory
+- approximately 50 entries have been created, with 63 as the maximum current candidate inventory
 - every completed entry follows the Knowledge Item Schema
 - every completed entry passes `validate_longevity_knowledge_item.py`
 - every completed entry maps to valid taxonomy topics
@@ -734,7 +735,7 @@ Batch 001 is complete when:
 - no private user health information is stored in the public knowledge library
 - no product marketplace, purchase recommendation, or hidden commercial conversion is introduced
 
-Quality and safety take precedence over reaching 62 entries.
+Quality and safety take precedence over reaching 63 entries.
 
 ---
 
