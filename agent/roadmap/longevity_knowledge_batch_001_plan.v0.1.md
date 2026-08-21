@@ -437,14 +437,14 @@ stress
 |---|---|---|---|---|---|
 | P0 | KN-T0501-0001 | 睡眠基础 | T05.01 | knowledge_entry | knowledge |
 | P1 | KN-T0501-0002 | 睡眠时间、规律与主观质量 | T05.01 | knowledge_entry | knowledge |
-| P0 | KN-T0502-0001 | 营养基础 | T05.02 | knowledge_entry | knowledge |
+| P0 | KN-T0502-0001 | 饮食与营养基础 | T05.02 | knowledge_entry | knowledge |
 | P0 | KN-T0502-0002 | 蛋白质基础 | T05.02 | knowledge_entry | knowledge |
 | P0 | KN-T0502-0003 | 膳食纤维基础 | T05.02 | knowledge_entry | knowledge |
 | P1 | KN-T0502-0004 | 水分与饮酒背景 | T05.02 | knowledge_entry | knowledge |
 | P0 | KN-T0503-0001 | 锻炼基础 | T05.03 | knowledge_entry | knowledge |
 | P0 | KN-T0503-0002 | 运动能力与心肺能力背景 | T05.03 | knowledge_entry | knowledge |
 | P1 | KN-T0503-0003 | 力量、活动度与平衡 | T05.03 | knowledge_entry | knowledge |
-| P0 | KN-T0504-0001 | 压力背景与主观压力 | T05.04 | knowledge_entry | knowledge |
+| P0 | KN-T0504-0001 | 压力、情绪与心理健康基础 | T05.04 | knowledge_entry | knowledge |
 | P0 | KN-T0505-0001 | 恢复基础 | T05.05 | knowledge_entry | knowledge |
 | P1 | KN-T0500-0001 | 睡眠、营养、锻炼、压力的综合背景 | T05.00 | knowledge_entry | knowledge |
 
