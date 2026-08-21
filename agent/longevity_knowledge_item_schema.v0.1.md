@@ -4,7 +4,7 @@ Version: v0.1
 Project: Congtie  
 Status: Draft  
 Owner: Congtie Agent Team  
-Last Updated: 2026-08-07  
+Last Updated: 2026-08-21
 Founder Gate: Approved for documentation-only conceptual schema on 2026-08-07
 
 ---
@@ -966,6 +966,29 @@ safety_notes:
 known_interactions:
 not_for_personalized_protocol:
 ```
+
+#### 11.5.1 Canonical Semantics of `not_for_personalized_protocol`
+
+`not_for_personalized_protocol: true` 表示在当前产品边界下，该知识条目不得被单独或直接用于自动生成 Personalized Longevity Protocol / 个性化长寿方案。该字段限制的是当前直接方案生成权限，不表示该知识被永久排除在未来受治理的个性化方案之外。
+
+在未来相应 capability、evidence、safety、permission 和 product governance 获得批准后，该条目仍可作为 evidence、knowledge 或 context input 参与受治理的个性化长寿方案生成。
+
+该字段不等同于 retrieval permission、runtime enablement、publication status 或 action authorization，也不授予用户同意或私人健康数据访问权限。
+
+`not_for_personalized_protocol: true` means that, under the current product boundary, this knowledge entry is not authorized for direct or standalone generation of a Personalized Longevity Protocol. It does not permanently exclude the entry from serving as an evidence, knowledge, or context input to a future governed personalized protocol once the relevant capability, evidence, safety, permission, and product-governance gates are approved.
+
+This field is distinct from retrieval permission, runtime enablement, publication status, and action authorization. It neither grants user consent nor authorizes access to private user data. The governing separation is:
+
+```text
+Knowledge availability
+!= Retrieval permission
+!= Personalization permission
+!= Action authorization
+```
+
+In Congtie v0, `true` may therefore express that nutrition knowledge does not directly generate a personal nutrition prescription, supplement knowledge does not directly generate a personal supplement protocol, or action-resource education does not directly generate a Personalized Longevity Protocol. "No direct generation now" does not mean "never usable as a future governed basis."
+
+If future runtime needs justify finer control, this boolean may be decomposed into more granular permissions through a separately approved schema and implementation change. This document does not create those permissions.
 
 If `common_dosages_in_literature` is included, it is internal reference context only and must not be surfaced as personalized dosage advice.
 

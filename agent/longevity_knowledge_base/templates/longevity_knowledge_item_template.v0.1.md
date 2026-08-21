@@ -4,7 +4,7 @@ Version: v0.1
 Project: Congtie
 Status: Draft
 Owner: Congtie Agent Team
-Last Updated: 2026-08-11
+Last Updated: 2026-08-21
 
 ---
 
@@ -724,6 +724,8 @@ safety_notes:
 known_interactions:
 not_for_personalized_protocol:
 ```
+
+`true` means no direct or standalone Personalized Longevity Protocol generation under the current product boundary; it does not permanently prohibit future governed use as evidence, knowledge, or context. This field is separate from retrieval permission, runtime enablement, publication status, and action authorization.
 
 Boundary:
 
