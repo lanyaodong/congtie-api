@@ -1,0 +1,2297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://congtieai.com/schemas/biomarker_measurement_registry_schema_v0.1.json",
+  "title": "Congtie Biomarker and Measurement Registry Concept Schema v0.1",
+  "description": "Draft / Founder Review Pending. Public canonical Registry concept schema only. No active records, personal observations, user identifiers, consent records, longitudinal events, personal targets, database behavior, API behavior, or runtime authorization are created by this schema.",
+  "x-document-status": "Draft / Founder Review Pending",
+  "x-record-production-status": "gated",
+  "$ref": "#/$defs/RegistryConcept",
+  "$defs": {
+    "SourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_key",
+        "title",
+        "source_role",
+        "verification_status"
+      ],
+      "properties": {
+        "source_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "organization_or_journal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "publication_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_role": {
+          "type": "string",
+          "enum": [
+            "definition_authority",
+            "measurement_method",
+            "guideline_recommendation",
+            "systematic_review_evidence",
+            "validation_evidence",
+            "reference_interval_source",
+            "decision_threshold_source",
+            "safety_or_regulatory_status",
+            "product_self_description",
+            "internal_governance",
+            "legacy_provenance",
+            "other_reviewed_role"
+          ]
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "does_not_support": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "doi": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pmid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "verification_status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "metadata_verified",
+            "content_verified",
+            "superseded"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "UnitDefinition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_code",
+        "unit_system",
+        "status"
+      ],
+      "properties": {
+        "unit_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "UCUM or reviewed local unit code. Null is allowed only when status is pending or not_applicable."
+        },
+        "unit_system": {
+          "type": "string",
+          "enum": [
+            "UCUM",
+            "local",
+            "not_applicable",
+            "pending"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "canonical",
+            "accepted",
+            "pending",
+            "not_applicable"
+          ]
+        },
+        "conversion_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conversion_verified": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "description": "A unit representation. UCUM belongs here rather than in measurement-concept external code mappings.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "canonical",
+                  "accepted"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "unit_code": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalCodeMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mapping_key",
+        "mapping_scope",
+        "system",
+        "code",
+        "status",
+        "confidence",
+        "source_reference_keys"
+      ],
+      "properties": {
+        "mapping_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "mapping_scope": {
+          "type": "string",
+          "enum": [
+            "concept",
+            "profile"
+          ]
+        },
+        "system": {
+          "type": "string",
+          "enum": [
+            "LOINC",
+            "SNOMED_CT",
+            "China_standard",
+            "lab_local_code",
+            "partner_code",
+            "other_reviewed_system"
+          ]
+        },
+        "code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Required for mapped or deprecated_mapping; may be null for pending or no_match."
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "mapped",
+            "pending",
+            "no_match",
+            "deprecated_mapping"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unreviewed"
+          ]
+        },
+        "source_reference_keys": {
+          "description": "Keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "description": "A reviewed concept- or profile-scoped code mapping. UCUM is excluded because unit codes are governed by UnitDefinition. mapping_key must not be duplicated across concept and profile scopes within one RegistryConcept.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "mapped",
+                  "deprecated_mapping"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_reference_keys": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "no_match"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "note"
+            ]
+          }
+        }
+      ]
+    },
+    "DeviceMetricMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mapping_key",
+        "vendor",
+        "original_metric_name",
+        "mapped_candidate_key",
+        "measurement_nature",
+        "known_limitations",
+        "mapping_status",
+        "source_reference_keys"
+      ],
+      "properties": {
+        "mapping_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "vendor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "device_family_or_model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "app_or_platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "original_metric_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "firmware_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "software_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "algorithm_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mapped_candidate_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_]*$"
+        },
+        "measurement_nature": {
+          "$ref": "#/$defs/MeasurementNature"
+        },
+        "mapping_status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "source_verified",
+            "human_reviewed",
+            "deprecated"
+          ]
+        },
+        "known_limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_reference_keys": {
+          "description": "Keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true
+        }
+      },
+      "description": "Profile-specific vendor/device/algorithm mapping. It is authoritative only inside MeasurementProfile.device_mappings and all source keys resolve to the parent RegistryConcept source pool.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mapping_status": {
+                "enum": [
+                  "source_verified",
+                  "human_reviewed",
+                  "deprecated"
+                ]
+              }
+            },
+            "required": [
+              "mapping_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_reference_keys": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "MeasurementNature": {
+      "type": "string",
+      "enum": [
+        "measured",
+        "estimated",
+        "derived",
+        "reported",
+        "classified"
+      ]
+    },
+    "ReferenceContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_type",
+        "context_key",
+        "source_reference_keys",
+        "comparison_operator"
+      ],
+      "properties": {
+        "context_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "reference_type": {
+          "type": "string",
+          "enum": [
+            "laboratory_reported_reference_interval_definition",
+            "population_reference_interval",
+            "guideline_clinical_decision_limit",
+            "risk_associated_threshold",
+            "critical_alert_value"
+          ]
+        },
+        "lower_bound": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "upper_bound": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "threshold_value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "laboratory_or_organization": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_or_platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "population_and_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effective_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "effective_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "source_reference_keys": {
+          "description": "Keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "comparison_operator": {
+          "type": "string",
+          "enum": [
+            "lt",
+            "lte",
+            "gt",
+            "gte",
+            "between",
+            "outside_range",
+            "not_applicable"
+          ]
+        },
+        "category_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interval_representation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reviewed interval rule when simple numeric lower/upper bounds are insufficient."
+        }
+      },
+      "description": "Public, method- and population-scoped reference metadata. laboratory_reported_reference_interval_definition describes public lab/method metadata only; a user's original report interval belongs to the Observation layer.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "reference_type": {
+                "const": "population_reference_interval"
+              }
+            },
+            "required": [
+              "reference_type"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "lower_bound",
+                  "upper_bound",
+                  "comparison_operator"
+                ],
+                "properties": {
+                  "lower_bound": {
+                    "type": "number"
+                  },
+                  "upper_bound": {
+                    "type": "number"
+                  },
+                  "comparison_operator": {
+                    "enum": [
+                      "between",
+                      "outside_range"
+                    ]
+                  }
+                }
+              },
+              {
+                "required": [
+                  "interval_representation"
+                ],
+                "properties": {
+                  "interval_representation": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "reference_type": {
+                "enum": [
+                  "guideline_clinical_decision_limit",
+                  "risk_associated_threshold",
+                  "critical_alert_value"
+                ]
+              }
+            },
+            "required": [
+              "reference_type"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "threshold_value",
+                  "comparison_operator"
+                ],
+                "properties": {
+                  "threshold_value": {
+                    "type": "number"
+                  },
+                  "comparison_operator": {
+                    "enum": [
+                      "lt",
+                      "lte",
+                      "gt",
+                      "gte"
+                    ]
+                  }
+                }
+              },
+              {
+                "required": [
+                  "lower_bound",
+                  "upper_bound",
+                  "comparison_operator"
+                ],
+                "properties": {
+                  "lower_bound": {
+                    "type": "number"
+                  },
+                  "upper_bound": {
+                    "type": "number"
+                  },
+                  "comparison_operator": {
+                    "enum": [
+                      "between",
+                      "outside_range"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "MeasurementProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_key",
+        "profile_status",
+        "measurement_nature",
+        "source_modality",
+        "method_comparability_status",
+        "accepted_units",
+        "reference_contexts",
+        "external_mappings",
+        "device_mappings",
+        "profile_limitations",
+        "source_reference_keys",
+        "derived_computation"
+      ],
+      "properties": {
+        "profile_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "profile_status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "mapped",
+            "source_verified",
+            "human_reviewed",
+            "active",
+            "deprecated"
+          ]
+        },
+        "measurement_nature": {
+          "$ref": "#/$defs/MeasurementNature"
+        },
+        "source_modality": {
+          "type": "string",
+          "enum": [
+            "laboratory",
+            "clinical_device",
+            "home_device",
+            "wearable",
+            "imaging",
+            "functional_test",
+            "user_report",
+            "sleep_diary",
+            "calculated",
+            "other_reviewed_modality"
+          ]
+        },
+        "specimen_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "matrix": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "body_site": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "collection_or_protocol_context": {
+          "$ref": "#/$defs/ProtocolContext"
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instrument_or_device": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vendor_or_model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "algorithm_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accepted_units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/UnitDefinition"
+          }
+        },
+        "canonicalization_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_comparability_status": {
+          "type": "string",
+          "enum": [
+            "comparable",
+            "not_comparable",
+            "context_dependent",
+            "unknown",
+            "pending_review"
+          ]
+        },
+        "trend_breakpoint_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cross_platform_comparison_prohibited": {
+          "type": "boolean"
+        },
+        "reference_contexts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ReferenceContext"
+          }
+        },
+        "external_mappings": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/ExternalCodeMapping"
+              },
+              {
+                "properties": {
+                  "mapping_scope": {
+                    "const": "profile"
+                  }
+                },
+                "required": [
+                  "mapping_scope"
+                ]
+              }
+            ]
+          }
+        },
+        "device_mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DeviceMetricMapping"
+          }
+        },
+        "profile_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "derived_computation": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/DerivedComputation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_reference_keys": {
+          "description": "Profile-provenance keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "profile_status": {
+                "enum": [
+                  "source_verified",
+                  "human_reviewed",
+                  "active"
+                ]
+              }
+            },
+            "required": [
+              "profile_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_reference_keys": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "measurement_nature": {
+                "const": "derived"
+              },
+              "profile_status": {
+                "enum": [
+                  "source_verified",
+                  "human_reviewed",
+                  "active"
+                ]
+              }
+            },
+            "required": [
+              "measurement_nature",
+              "profile_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "derived_computation": {
+                "$ref": "#/$defs/DerivedComputation"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "UseEvidenceClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_key",
+        "claim_status",
+        "use_context",
+        "claim_summary",
+        "population_or_context",
+        "evidence_level",
+        "evidence_posture",
+        "source_reference_keys",
+        "supports",
+        "does_not_support",
+        "uncertainty"
+      ],
+      "properties": {
+        "claim_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "claim_status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "source_verified",
+            "human_reviewed",
+            "deprecated"
+          ]
+        },
+        "use_context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "biomarker_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "susceptibility_risk",
+            "diagnostic",
+            "monitoring",
+            "prognostic",
+            "predictive",
+            "pharmacodynamic_response",
+            "safety"
+          ]
+        },
+        "claim_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "population_or_context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method_or_profile_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "evidence_level": {
+          "type": "string",
+          "enum": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5",
+            "E0",
+            "EX"
+          ]
+        },
+        "evidence_posture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supports": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "does_not_support": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "uncertainty": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_reference_keys": {
+          "description": "Claim-support keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "SystemRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system_id",
+        "relationship_type",
+        "rationale",
+        "source_reference_keys",
+        "evidence_scope",
+        "confidence"
+      ],
+      "properties": {
+        "system_id": {
+          "type": "string",
+          "enum": [
+            "T03.01",
+            "T03.02",
+            "T03.03",
+            "T03.04",
+            "T03.05",
+            "T03.06"
+          ]
+        },
+        "relationship_type": {
+          "type": "string",
+          "enum": [
+            "biological_relationship",
+            "product_grouping"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unreviewed"
+          ]
+        },
+        "is_primary_product_grouping": {
+          "type": "boolean"
+        },
+        "non_authorization_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_reference_keys": {
+          "description": "Reviewed biological or product-governance source keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "LifecycleRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relationship_type",
+        "target_candidate_key",
+        "status"
+      ],
+      "properties": {
+        "relationship_type": {
+          "type": "string",
+          "enum": [
+            "supersedes",
+            "superseded_by",
+            "duplicate_of"
+          ]
+        },
+        "target_candidate_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_]*$"
+        },
+        "target_registry_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(BM|ME|SC|QS)-[0-9]{6}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "human_reviewed",
+            "active",
+            "deprecated"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "AgentPermissionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "permitted_uses",
+        "prohibited_uses",
+        "action_authorization",
+        "authorization_note"
+      ],
+      "properties": {
+        "permitted_uses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "prohibited_uses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "action_authorization": {
+          "type": "string",
+          "enum": [
+            "none",
+            "separately_gated"
+          ]
+        },
+        "authorization_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "PersonalizedTargetSupport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_status",
+        "prerequisites",
+        "boundary_note"
+      ],
+      "properties": {
+        "support_status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "context_dependent",
+            "not_applicable",
+            "requires_governance"
+          ]
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "boundary_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "RegistryConcept": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_key",
+        "registry_id",
+        "namespace",
+        "lifecycle_status",
+        "canonical_name_zh",
+        "canonical_name_en",
+        "aliases",
+        "legacy_codes",
+        "information_type",
+        "construct_type",
+        "construct_definition",
+        "allowed_measurement_natures",
+        "value_type",
+        "unit_policy",
+        "source_references",
+        "definition_source_keys",
+        "profiles",
+        "use_evidence_claims",
+        "system_relations",
+        "external_mappings",
+        "interpretation_limitations",
+        "agent_permissions",
+        "personalized_target_support",
+        "lifecycle_relations",
+        "governance_metadata"
+      ],
+      "properties": {
+        "candidate_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_]*$"
+        },
+        "registry_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(BM|ME|SC|QS)-[0-9]{6}$"
+        },
+        "namespace": {
+          "type": "string",
+          "enum": [
+            "BM",
+            "ME",
+            "SC",
+            "QS"
+          ]
+        },
+        "lifecycle_status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "mapped",
+            "source_verified",
+            "human_reviewed",
+            "active",
+            "deprecated",
+            "research_only",
+            "excluded"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^v[0-9]+\\.[0-9]+$"
+        },
+        "canonical_name_zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical_name_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "abbreviation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "legacy_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "information_type": {
+          "type": "string",
+          "enum": [
+            "laboratory_biomarker",
+            "molecular_biomarker",
+            "physiological_measurement",
+            "functional_performance_measurement",
+            "imaging_derived_measure",
+            "device_measured_signal",
+            "device_estimated_metric",
+            "derived_score_index",
+            "patient_user_reported_state",
+            "validated_questionnaire_scale",
+            "behavior_lifestyle_record",
+            "demographic_social_context",
+            "exposure_environment_context",
+            "clinical_record",
+            "diagnosis_medication_procedure",
+            "specimen_measurement_metadata"
+          ]
+        },
+        "measurement_domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "construct_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "construct_definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowed_measurement_natures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/MeasurementNature"
+          },
+          "uniqueItems": true
+        },
+        "value_type": {
+          "type": "string",
+          "enum": [
+            "number",
+            "integer",
+            "string",
+            "boolean",
+            "coded",
+            "interval",
+            "date_time",
+            "duration",
+            "ratio",
+            "composite"
+          ]
+        },
+        "profiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MeasurementProfile"
+          }
+        },
+        "use_evidence_claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/UseEvidenceClaim"
+          }
+        },
+        "system_relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SystemRelation"
+          }
+        },
+        "external_mappings": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/ExternalCodeMapping"
+              },
+              {
+                "properties": {
+                  "mapping_scope": {
+                    "const": "concept"
+                  }
+                },
+                "required": [
+                  "mapping_scope"
+                ]
+              }
+            ]
+          }
+        },
+        "interpretation_limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "agent_permissions": {
+          "$ref": "#/$defs/AgentPermissionBoundary"
+        },
+        "personalized_target_support": {
+          "$ref": "#/$defs/PersonalizedTargetSupport"
+        },
+        "lifecycle_relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LifecycleRelation"
+          }
+        },
+        "governance_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unit_policy": {
+          "$ref": "#/$defs/UnitPolicy"
+        },
+        "source_references": {
+          "description": "Central source pool for this concept. source_key values must be unique and all key references must resolve to this array; programmatic validation enforces both rules.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceReference"
+          }
+        },
+        "definition_source_keys": {
+          "description": "Definition-authority keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true
+        },
+        "governance_metadata": {
+          "$ref": "#/$defs/GovernanceMetadata"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "lifecycle_status": {
+                "const": "source_verified"
+              }
+            },
+            "required": [
+              "lifecycle_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_references": {
+                "minItems": 1
+              },
+              "definition_source_keys": {
+                "minItems": 1
+              },
+              "profiles": {
+                "minItems": 1,
+                "contains": {
+                  "type": "object",
+                  "required": [
+                    "profile_status",
+                    "source_reference_keys"
+                  ],
+                  "properties": {
+                    "profile_status": {
+                      "enum": [
+                        "source_verified",
+                        "human_reviewed",
+                        "active"
+                      ]
+                    },
+                    "source_reference_keys": {
+                      "minItems": 1
+                    }
+                  }
+                },
+                "minContains": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "lifecycle_status": {
+                "const": "human_reviewed"
+              }
+            },
+            "required": [
+              "lifecycle_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "version",
+              "governance_metadata"
+            ],
+            "properties": {
+              "source_references": {
+                "minItems": 1
+              },
+              "definition_source_keys": {
+                "minItems": 1
+              },
+              "profiles": {
+                "minItems": 1,
+                "contains": {
+                  "type": "object",
+                  "required": [
+                    "profile_status",
+                    "source_reference_keys"
+                  ],
+                  "properties": {
+                    "profile_status": {
+                      "enum": [
+                        "human_reviewed",
+                        "active"
+                      ]
+                    },
+                    "source_reference_keys": {
+                      "minItems": 1
+                    }
+                  }
+                },
+                "minContains": 1
+              },
+              "interpretation_limitations": {
+                "minItems": 1
+              },
+              "governance_metadata": {
+                "type": "object",
+                "required": [
+                  "reviewed_by",
+                  "reviewed_date"
+                ],
+                "properties": {
+                  "reviewed_by": {
+                    "minItems": 1
+                  },
+                  "reviewed_date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              "use_evidence_claims": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "claim_status"
+                  ],
+                  "properties": {
+                    "claim_status": {
+                      "enum": [
+                        "human_reviewed",
+                        "deprecated"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "lifecycle_status": {
+                "const": "active"
+              }
+            },
+            "required": [
+              "lifecycle_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "version",
+              "governance_metadata"
+            ],
+            "properties": {
+              "registry_id": {
+                "type": "string",
+                "pattern": "^(BM|ME|SC|QS)-[0-9]{6}$"
+              },
+              "source_references": {
+                "minItems": 1
+              },
+              "definition_source_keys": {
+                "minItems": 1
+              },
+              "profiles": {
+                "minItems": 1,
+                "contains": {
+                  "type": "object",
+                  "required": [
+                    "profile_status",
+                    "source_reference_keys"
+                  ],
+                  "properties": {
+                    "profile_status": {
+                      "const": "active"
+                    },
+                    "source_reference_keys": {
+                      "minItems": 1
+                    }
+                  }
+                },
+                "minContains": 1
+              },
+              "use_evidence_claims": {
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "claim_status"
+                  ],
+                  "properties": {
+                    "claim_status": {
+                      "enum": [
+                        "human_reviewed",
+                        "deprecated"
+                      ]
+                    }
+                  }
+                },
+                "contains": {
+                  "type": "object",
+                  "required": [
+                    "claim_status"
+                  ],
+                  "properties": {
+                    "claim_status": {
+                      "const": "human_reviewed"
+                    }
+                  }
+                },
+                "minContains": 1
+              },
+              "interpretation_limitations": {
+                "minItems": 1
+              },
+              "governance_metadata": {
+                "type": "object",
+                "required": [
+                  "reviewed_by",
+                  "reviewed_date"
+                ],
+                "properties": {
+                  "reviewed_by": {
+                    "minItems": 1
+                  },
+                  "reviewed_date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "namespace": {
+                "const": "BM"
+              }
+            },
+            "required": [
+              "namespace"
+            ]
+          },
+          "then": {
+            "properties": {
+              "information_type": {
+                "enum": [
+                  "laboratory_biomarker",
+                  "molecular_biomarker"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "namespace": {
+                "const": "ME"
+              }
+            },
+            "required": [
+              "namespace"
+            ]
+          },
+          "then": {
+            "properties": {
+              "information_type": {
+                "enum": [
+                  "physiological_measurement",
+                  "functional_performance_measurement",
+                  "imaging_derived_measure",
+                  "device_measured_signal",
+                  "device_estimated_metric",
+                  "patient_user_reported_state",
+                  "behavior_lifestyle_record"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "namespace": {
+                "const": "SC"
+              }
+            },
+            "required": [
+              "namespace"
+            ]
+          },
+          "then": {
+            "properties": {
+              "information_type": {
+                "enum": [
+                  "derived_score_index"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "namespace": {
+                "const": "QS"
+              }
+            },
+            "required": [
+              "namespace"
+            ]
+          },
+          "then": {
+            "properties": {
+              "information_type": {
+                "enum": [
+                  "validated_questionnaire_scale"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "One public canonical measurement concept. source_references is the single source metadata pool; every *_source_keys value must resolve within that pool, source_key values must be unique, external mapping_key values must not be duplicated across concept/profile scopes, and device mappings are profile-only. These cross-object constraints require programmatic validation in addition to JSON Schema. Namespace and information_type compatibility is enforced by both this schema and the permanent authoring validator."
+    },
+    "UnitPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "canonical_unit",
+        "note"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "single_canonical",
+            "profile_specific",
+            "non_convertible_representations",
+            "not_applicable",
+            "pending"
+          ]
+        },
+        "canonical_unit": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/UnitDefinition"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "single_canonical"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "canonical_unit": {
+                "type": "object",
+                "required": [
+                  "unit_code",
+                  "unit_system",
+                  "status"
+                ],
+                "properties": {
+                  "unit_code": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "unit_system": {
+                    "enum": [
+                      "UCUM",
+                      "local"
+                    ]
+                  },
+                  "status": {
+                    "const": "canonical"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "profile_specific",
+                  "non_convertible_representations",
+                  "not_applicable",
+                  "pending"
+                ]
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "canonical_unit": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ],
+      "description": "Concept-level unit governance. single_canonical requires a reviewed canonical UCUM or local unit; profile_specific and non_convertible representations keep units at profile level."
+    },
+    "ProtocolContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "protocol_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "protocol_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "measurement_window": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timing_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fasting_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "fasting",
+            "non_fasting",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "fasting_duration_hours": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "posture": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rest_duration_minutes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "body_site": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "laterality": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "left",
+            "right",
+            "bilateral",
+            "midline",
+            "not_applicable"
+          ]
+        },
+        "repetition_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pace_or_effort_instruction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "context_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "DerivedComputation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "computation_key",
+        "equation_name",
+        "equation_version",
+        "formula_or_equation",
+        "inputs",
+        "source_reference_keys",
+        "output_unit_policy",
+        "output_unit_note",
+        "computation_limitations"
+      ],
+      "properties": {
+        "computation_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "equation_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "equation_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_or_equation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_reference_keys": {
+          "description": "Keys resolving to RegistryConcept.source_references.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "output_unit_policy": {
+          "$ref": "#/$defs/UnitPolicy"
+        },
+        "output_unit_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "computation_limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ComputationInput"
+          }
+        }
+      },
+      "description": "Traceable derived computation with one canonical inputs list. Inputs may be Registry concepts, user-context parameters, constants, or categorical parameters; input_key uniqueness and candidate resolution are enforced by the permanent authoring validator."
+    },
+    "GovernanceMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "created_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "last_modified_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "reviewed_by": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "reviewed_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "last_source_check_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "status_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ComputationInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "input_key",
+        "input_kind",
+        "candidate_key",
+        "context_key",
+        "constant_value",
+        "role",
+        "required",
+        "unit_code",
+        "note"
+      ],
+      "properties": {
+        "input_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "input_kind": {
+          "type": "string",
+          "enum": [
+            "registry_concept",
+            "user_context",
+            "constant",
+            "categorical_parameter"
+          ]
+        },
+        "candidate_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9][a-z0-9_]*$"
+        },
+        "context_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9][a-z0-9_]*$"
+        },
+        "constant_value": {
+          "type": [
+            "number",
+            "string",
+            "boolean",
+            "null"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "unit_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "input_kind": {
+                "const": "registry_concept"
+              }
+            },
+            "required": [
+              "input_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidate_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "context_key": {
+                "type": "null"
+              },
+              "constant_value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "input_kind": {
+                "const": "user_context"
+              }
+            },
+            "required": [
+              "input_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidate_key": {
+                "type": "null"
+              },
+              "context_key": {
+                "type": "string",
+                "minLength": 1
+              },
+              "constant_value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "input_kind": {
+                "const": "constant"
+              }
+            },
+            "required": [
+              "input_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidate_key": {
+                "type": "null"
+              },
+              "context_key": {
+                "type": "null"
+              },
+              "constant_value": {
+                "type": [
+                  "number",
+                  "string",
+                  "boolean"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "input_kind": {
+                "const": "categorical_parameter"
+              }
+            },
+            "required": [
+              "input_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidate_key": {
+                "type": "null"
+              },
+              "context_key": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ],
+      "description": "A formula input definition, never a user's actual value. User context such as age_years or sex_at_birth is represented as input metadata and does not create a BM/ME Registry concept."
+    }
+  },
+  "x-schema-publication-status": "not_published",
+  "x-schema-id-note": "The $id is a stable schema identifier only. It does not assert that the URL currently serves this file and does not authorize website publication or runtime serving."
+}

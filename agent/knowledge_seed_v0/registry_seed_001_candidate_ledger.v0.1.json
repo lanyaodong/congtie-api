@@ -1,0 +1,3930 @@
+{
+  "document_metadata": {
+    "title": "Registry Seed 001 Candidate Ledger v0.1",
+    "version": "v0.1",
+    "status": "Draft / Founder Review Pending",
+    "prepared_date": "2026-08-22",
+    "schema_path": "schemas/biomarker_measurement_registry_schema_v0.1.json",
+    "numeric_id_policy": "Option B: namespace frozen; numeric IDs not assigned",
+    "active_registry_records": 0,
+    "runtime_authorized": false,
+    "core_expected_counts": {
+      "BM": 29,
+      "ME": 20,
+      "SC": 4,
+      "QS": 0,
+      "total": 53
+    },
+    "extended_count": 86,
+    "note": "Candidate definitions only. registry_id is null for every Core and Extended candidate.",
+    "extended_eligibility_counts": {
+      "context_or_event_layer": 4,
+      "device_mapping_layer": 5,
+      "needs_review": 4,
+      "registry_concept_candidate": 60,
+      "representation_or_procedure": 4,
+      "research_family": 9
+    },
+    "c25_revision_note": "Core scope and First Wave are unchanged. Extended registry_eligibility is planning-only and is not a permanent Registry Schema enum.",
+    "c26_revision_note": "Core 53 and First Wave 12 are unchanged. sleep_midpoint is SC; five device-mapping planning items have no Registry namespace and are not numeric-ID eligible."
+  },
+  "core_candidates": [
+    {
+      "candidate_key": "total_cholesterol",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Total Cholesterol",
+      "canonical_name_zh": "总胆固醇",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000001",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "ldl_cholesterol",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "LDL Cholesterol",
+      "canonical_name_zh": "低密度脂蛋白胆固醇",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000002",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "derived",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Direct assay and calculated LDL-C require separate profiles, equation/version provenance, and a method-change trend breakpoint."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "hdl_cholesterol",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "HDL Cholesterol",
+      "canonical_name_zh": "高密度脂蛋白胆固醇",
+      "aliases": [
+        "HDL-C",
+        "HDL"
+      ],
+      "legacy_review_coordinate": "BM-000003",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "triglycerides",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Triglycerides",
+      "canonical_name_zh": "甘油三酯",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000004",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "apolipoprotein_b",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Apolipoprotein B",
+      "canonical_name_zh": "载脂蛋白B",
+      "aliases": [
+        "ApoB"
+      ],
+      "legacy_review_coordinate": "BM-000005",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "lipoprotein_a",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Lipoprotein(a)",
+      "canonical_name_zh": "脂蛋白(a)",
+      "aliases": [
+        "Lp(a)"
+      ],
+      "legacy_review_coordinate": "BM-000006",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Mass and molar reporting require method/unit profiles; no unvalidated generic conversion is permitted."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "fasting_plasma_glucose",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Fasting Plasma Glucose",
+      "canonical_name_zh": "空腹血糖",
+      "aliases": [
+        "Fasting Glucose",
+        "FPG"
+      ],
+      "legacy_review_coordinate": "BM-000007",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Specimen, fasting definition, collection time, and method must be explicit."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "hba1c",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Hemoglobin A1c",
+      "canonical_name_zh": "糖化血红蛋白",
+      "aliases": [
+        "HbA1c",
+        "A1c"
+      ],
+      "legacy_review_coordinate": "BM-000008",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "fasting_insulin",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Fasting Insulin",
+      "canonical_name_zh": "空腹胰岛素",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000009",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Assay comparability and fasting/collection context require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "creatinine",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Creatinine",
+      "canonical_name_zh": "肌酐",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000010",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "alanine_aminotransferase",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Alanine Aminotransferase",
+      "canonical_name_zh": "丙氨酸氨基转移酶",
+      "aliases": [
+        "ALT"
+      ],
+      "legacy_review_coordinate": "BM-000011",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "aspartate_aminotransferase",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Aspartate Aminotransferase",
+      "canonical_name_zh": "天门冬氨酸氨基转移酶",
+      "aliases": [
+        "AST"
+      ],
+      "legacy_review_coordinate": "BM-000012",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "gamma_glutamyl_transferase",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Gamma-Glutamyl Transferase",
+      "canonical_name_zh": "γ-谷氨酰转移酶",
+      "aliases": [
+        "GGT"
+      ],
+      "legacy_review_coordinate": "BM-000013",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "albumin",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Albumin",
+      "canonical_name_zh": "白蛋白",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000014",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "hemoglobin",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Hemoglobin",
+      "canonical_name_zh": "血红蛋白",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000015",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "white_blood_cell_count",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "White Blood Cell Count",
+      "canonical_name_zh": "白细胞计数",
+      "aliases": [
+        "WBC Count"
+      ],
+      "legacy_review_coordinate": "BM-000016",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "platelet_count",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Platelet Count",
+      "canonical_name_zh": "血小板计数",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000017",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "high_sensitivity_c_reactive_protein",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "High-Sensitivity C-Reactive Protein",
+      "canonical_name_zh": "高敏C反应蛋白",
+      "aliases": [
+        "hsCRP",
+        "hs-CRP"
+      ],
+      "legacy_review_coordinate": "BM-000018",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "thyroid_stimulating_hormone",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Thyroid-Stimulating Hormone",
+      "canonical_name_zh": "促甲状腺激素",
+      "aliases": [
+        "TSH"
+      ],
+      "legacy_review_coordinate": "BM-000019",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "free_thyroxine",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Free Thyroxine",
+      "canonical_name_zh": "游离甲状腺素",
+      "aliases": [
+        "Free T4",
+        "FT4"
+      ],
+      "legacy_review_coordinate": "BM-000020",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "ferritin",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Ferritin",
+      "canonical_name_zh": "铁蛋白",
+      "aliases": [],
+      "legacy_review_coordinate": "BM-000021",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Iron-status and inflammation-related use contexts require separate claims and confounder boundaries."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "25_hydroxyvitamin_d",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "25-Hydroxyvitamin D",
+      "canonical_name_zh": "25-羟维生素D",
+      "aliases": [
+        "Vitamin D (25-OH)",
+        "25-OH Vitamin D"
+      ],
+      "legacy_review_coordinate": "BM-000022",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Total versus component reporting and assay comparability require profile review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "hematocrit",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Hematocrit",
+      "canonical_name_zh": "红细胞压积",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_fraction",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "red_blood_cell_count",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Red Blood Cell Count",
+      "canonical_name_zh": "红细胞计数",
+      "aliases": [
+        "RBC Count"
+      ],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "urea_bun_construct",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Urea / Blood Urea Nitrogen Construct",
+      "canonical_name_zh": "尿素或尿素氮",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte_family",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "One concept with reporting profiles versus two related concepts remains unresolved; units, transformation, and external codes require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "alkaline_phosphatase",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Alkaline Phosphatase",
+      "canonical_name_zh": "碱性磷酸酶",
+      "aliases": [
+        "ALP"
+      ],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "total_bilirubin",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Total Bilirubin",
+      "canonical_name_zh": "总胆红素",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification.",
+        "Generic “Bilirubin” source labels may refer to total bilirubin in some reports but require source/report-context verification before canonical mapping."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "sodium",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Sodium",
+      "canonical_name_zh": "钠",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "potassium",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Potassium",
+      "canonical_name_zh": "钾",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "systolic_blood_pressure",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Systolic Blood Pressure",
+      "canonical_name_zh": "收缩压",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000001",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "diastolic_blood_pressure",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Diastolic Blood Pressure",
+      "canonical_name_zh": "舒张压",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000002",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "heart_rate",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Heart Rate",
+      "canonical_name_zh": "心率",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000003",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Resting, sleeping, and activity contexts should use profiles/windows rather than automatic separate concepts."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "heart_rate_variability",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Heart-Rate Variability",
+      "canonical_name_zh": "心率变异性",
+      "aliases": [
+        "HRV"
+      ],
+      "legacy_review_coordinate": "ME-000004",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "measurement_family",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Parent-family versus metric-specific concepts remains unresolved; RMSSD, SDNN, window, artifact handling, source, and algorithm must be represented."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "body_weight",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Body Weight",
+      "canonical_name_zh": "体重",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000005",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "anthropometric_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "waist_circumference",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Waist Circumference",
+      "canonical_name_zh": "腰围",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000006",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "anthropometric_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Anatomical landmark and protocol must be profile metadata."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "body_fat_percentage",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Body Fat Percentage",
+      "canonical_name_zh": "体脂率",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000007",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "body_composition_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "DXA, BIA, and consumer-device estimates require non-equivalent method profiles and cross-platform limits."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "body_temperature",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Body Temperature",
+      "canonical_name_zh": "体温",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000008",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "skin_temperature_signal",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Skin Temperature Signal",
+      "canonical_name_zh": "皮肤温度信号",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000009",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "device_measured_signal",
+      "construct_type": "device_signal",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Body site, device, sampling, and distinction from core body temperature require explicit profiles."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "respiratory_rate",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Respiratory Rate",
+      "canonical_name_zh": "呼吸频率",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000010",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Clinical count and device estimate require source/method profiles."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "oxygen_saturation",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Oxygen Saturation",
+      "canonical_name_zh": "血氧饱和度",
+      "aliases": [
+        "SpO2"
+      ],
+      "legacy_review_coordinate": "ME-000011",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Method, device, perfusion, body site, and context limits require review.",
+        "SpO₂ specifically denotes peripheral oxygen saturation; the canonical concept must not silently collapse arterial oxygen saturation or other saturation constructs into the same record without profile/construct review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "sleep_total_time",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Total Sleep Time",
+      "canonical_name_zh": "总睡眠时间",
+      "aliases": [
+        "Sleep Duration",
+        "睡眠时长"
+      ],
+      "legacy_review_coordinate": "ME-000012",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "duration",
+      "preproduction_issues": [
+        "User report, diary, PSG, and wearable estimates require profiles; main sleep, 24-hour sleep, time in bed, and sleep opportunity are distinct."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "sleep_latency",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Sleep Latency",
+      "canonical_name_zh": "入睡潜伏期",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000013",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "duration",
+      "preproduction_issues": [
+        "Start/end event definitions and source modality require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "wake_after_sleep_onset",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Wake After Sleep Onset",
+      "canonical_name_zh": "入睡后清醒时间",
+      "aliases": [
+        "WASO"
+      ],
+      "legacy_review_coordinate": "ME-000014",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "duration",
+      "preproduction_issues": [
+        "Sleep-onset boundary, event detection, and source algorithm require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "cardiorespiratory_fitness_vo2max",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Cardiorespiratory Fitness / VO2max-Related Result",
+      "canonical_name_zh": "心肺适能或最大摄氧量相关结果",
+      "aliases": [
+        "VO2max"
+      ],
+      "legacy_review_coordinate": "ME-000015",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "measurement_family",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Capability, procedure, direct result, and device estimate must be separated before production."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "grip_strength",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Grip Strength",
+      "canonical_name_zh": "握力",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000016",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "functional_test_result",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Side, device, position, attempts, and protocol require profiles."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "gait_speed",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Gait Speed",
+      "canonical_name_zh": "步速",
+      "aliases": [],
+      "legacy_review_coordinate": "ME-000017",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "functional_test_result",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Distance, start method, aids, pace instruction, and protocol require profiles."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "time_in_bed",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Time in Bed",
+      "canonical_name_zh": "卧床时间",
+      "aliases": [
+        "TIB"
+      ],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "agent/longevity_knowledge_base/entries/knowledge/KN-T0501-0001.sleep-basics.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "duration",
+      "preproduction_issues": [
+        "Event boundaries, sleep-opportunity relationship, and diary/PSG/device profiles require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "height",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Height",
+      "canonical_name_zh": "身高",
+      "aliases": [],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "anthropometric_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Definition source, profile boundary, external codes, units, and use-evidence scope require record-level verification."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "step_count",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Step Count",
+      "canonical_name_zh": "步数",
+      "aliases": [
+        "Steps"
+      ],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "activity_count_measurement",
+      "allowed_measurement_natures": [
+        "measured",
+        "estimated",
+        "reported"
+      ],
+      "value_type": "integer",
+      "preproduction_issues": [
+        "Sensor source, device, algorithm/version, manual-entry profile, and cross-vendor non-equivalence require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "estimated_glomerular_filtration_rate",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Estimated Glomerular Filtration Rate",
+      "canonical_name_zh": "估算肾小球滤过率",
+      "aliases": [
+        "eGFR"
+      ],
+      "legacy_review_coordinate": "SC-000001",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_index",
+      "allowed_measurement_natures": [
+        "derived",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Equation, version, inputs, demographics, unit, and input lineage are required."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "body_mass_index",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Body Mass Index",
+      "canonical_name_zh": "体重指数",
+      "aliases": [
+        "BMI"
+      ],
+      "legacy_review_coordinate": "SC-000002",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_index",
+      "allowed_measurement_natures": [
+        "derived",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Height and body-weight input provenance must remain linked; BMI is not a diagnosis."
+      ],
+      "first_wave_proposed": true,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "sleep_efficiency",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "YELLOW",
+      "semantic_status": "preproduction_resolution_required",
+      "canonical_name_en": "Sleep Efficiency",
+      "canonical_name_zh": "睡眠效率",
+      "aliases": [],
+      "legacy_review_coordinate": "SC-000003",
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_index",
+      "allowed_measurement_natures": [
+        "derived",
+        "reported"
+      ],
+      "value_type": "ratio",
+      "preproduction_issues": [
+        "Denominator, event boundaries, formula, source, and input provenance require review."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    },
+    {
+      "candidate_key": "non_hdl_cholesterol",
+      "registry_id": null,
+      "scope": "core",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "GREEN",
+      "semantic_status": "ready_for_record_boundary_review",
+      "canonical_name_en": "Non-HDL Cholesterol",
+      "canonical_name_zh": "非高密度脂蛋白胆固醇",
+      "aliases": [
+        "Non-HDL-C"
+      ],
+      "legacy_review_coordinate": null,
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "agent/biomarker_system_map.v0.2.draft.json"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_index",
+      "allowed_measurement_natures": [
+        "derived",
+        "reported"
+      ],
+      "value_type": "number",
+      "preproduction_issues": [
+        "Total-cholesterol and HDL-C input provenance and formula must remain linked."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned"
+    }
+  ],
+  "extended_candidates": [
+    {
+      "candidate_key": "generic_balance_test_measure",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Balance Test Measure",
+      "canonical_name_zh": "通用平衡测试测量",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md",
+        "spec/biomarker_schema_v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "measurement_family",
+      "future_placement": "named_test_candidates",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "needs_review",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "generic_sleep_regularity_index",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Sleep Regularity Index",
+      "canonical_name_zh": "通用睡眠规律指数",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "formula_family",
+      "future_placement": "formula_specific_candidates",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "generic_sleep_score",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Sleep Score",
+      "canonical_name_zh": "通用睡眠评分",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "proprietary_score_family",
+      "future_placement": "device_metric_mapping_layer",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "device_mapping_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "generic_recovery_score",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Recovery Score",
+      "canonical_name_zh": "通用恢复评分",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "proprietary_score_family",
+      "future_placement": "device_metric_mapping_layer",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "device_mapping_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "generic_readiness_score",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Readiness Score",
+      "canonical_name_zh": "通用准备度评分",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "proprietary_score_family",
+      "future_placement": "device_metric_mapping_layer",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "device_mapping_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "generic_device_stress_estimate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "RED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Generic Device Stress Estimate",
+      "canonical_name_zh": "通用设备压力估算",
+      "aliases": [],
+      "source_assets": [
+        "agent/knowledge_seed_v0/registry_seed_001_asset_reconciliation_and_seed_definition.v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "proprietary_proxy_family",
+      "future_placement": "device_metric_mapping_layer",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "device_mapping_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "blood_lactate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Blood Lactate",
+      "canonical_name_zh": "血乳酸",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "creatine_kinase",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Creatine Kinase",
+      "canonical_name_zh": "肌酸激酶",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "basal_metabolic_rate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Basal Metabolic Rate",
+      "canonical_name_zh": "基础代谢率",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "measurement_or_estimate_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "needs_review",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "homa_ir",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "HOMA-IR",
+      "canonical_name_zh": "HOMA-IR指数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_index",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "c_peptide",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "C-Peptide",
+      "canonical_name_zh": "C肽",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "triglyceride_hdl_ratio",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Triglyceride / HDL Ratio",
+      "canonical_name_zh": "甘油三酯与HDL比值",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_ratio",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "apolipoprotein_a1",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Apolipoprotein A-I",
+      "canonical_name_zh": "载脂蛋白A-I",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "uric_acid",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Uric Acid",
+      "canonical_name_zh": "尿酸",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "leptin",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Leptin",
+      "canonical_name_zh": "瘦素",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "adiponectin",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Adiponectin",
+      "canonical_name_zh": "脂联素",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "visceral_fat",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Visceral Fat Measure",
+      "canonical_name_zh": "内脏脂肪测量",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "measurement_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "needs_review",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "fibrinogen",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Fibrinogen",
+      "canonical_name_zh": "纤维蛋白原",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "homocysteine",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Homocysteine",
+      "canonical_name_zh": "同型半胱氨酸",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "nt_probnp",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "NT-proBNP",
+      "canonical_name_zh": "N端B型利钠肽前体",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "high_sensitivity_troponin",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "High-Sensitivity Troponin",
+      "canonical_name_zh": "高敏肌钙蛋白",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "assay_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "ldl_particle_number",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "LDL Particle Number",
+      "canonical_name_zh": "LDL颗粒数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "measurement_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "small_dense_ldl",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Small Dense LDL",
+      "canonical_name_zh": "小而密低密度脂蛋白",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "measurement_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "carotid_intima_media_thickness",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Carotid Intima-Media Thickness",
+      "canonical_name_zh": "颈动脉内膜中层厚度",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "imaging_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "coronary_artery_calcium_score",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Coronary Artery Calcium Score",
+      "canonical_name_zh": "冠状动脉钙化积分",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "imaging_score",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "pulse_wave_velocity",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Pulse Wave Velocity",
+      "canonical_name_zh": "脉搏波传导速度",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "physiological_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "lean_body_mass",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Lean Body Mass",
+      "canonical_name_zh": "瘦体重",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "body_composition_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "skeletal_muscle_mass",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Skeletal Muscle Mass",
+      "canonical_name_zh": "骨骼肌量",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "body_composition_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "bone_mineral_density",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Bone Mineral Density",
+      "canonical_name_zh": "骨密度",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "imaging_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "dxa_body_composition_procedure",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "DXA Body Composition Procedure",
+      "canonical_name_zh": "DXA体成分测量程序",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "diagnosis_medication_procedure",
+      "construct_type": "measurement_procedure",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "representation_or_procedure",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "chair_stand_test",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Chair Stand Test Result",
+      "canonical_name_zh": "椅子起立测试结果",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "functional_test_result",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "sleep_quality_user_report",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Subjective Sleep Quality",
+      "canonical_name_zh": "主观睡眠质量",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "patient_user_reported_state",
+      "construct_type": "user_reported_state",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "context_or_event_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "deep_sleep_duration",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Deep Sleep Duration",
+      "canonical_name_zh": "深睡时长",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "sleep_stage_duration",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "rem_sleep_duration",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "REM Sleep Duration",
+      "canonical_name_zh": "快速眼动睡眠时长",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "sleep_stage_duration",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "reaction_time",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Reaction Time",
+      "canonical_name_zh": "反应时",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "functional_performance_measurement",
+      "construct_type": "functional_test_result",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "cognitive_score",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Cognitive Score",
+      "canonical_name_zh": "认知评分",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "instrument_specific_score",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "cortisol",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Cortisol",
+      "canonical_name_zh": "皮质醇",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "bdnf",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Brain-Derived Neurotrophic Factor",
+      "canonical_name_zh": "脑源性神经营养因子",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "neutrophil_count",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Neutrophil Count",
+      "canonical_name_zh": "中性粒细胞计数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "lymphocyte_count",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Lymphocyte Count",
+      "canonical_name_zh": "淋巴细胞计数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "monocyte_count",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Monocyte Count",
+      "canonical_name_zh": "单核细胞计数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "cell_count",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "neutrophil_lymphocyte_ratio",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Neutrophil-to-Lymphocyte Ratio",
+      "canonical_name_zh": "中性粒细胞与淋巴细胞比值",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_ratio",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "interleukin_6",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Interleukin-6",
+      "canonical_name_zh": "白细胞介素-6",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "tnf_alpha",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "TNF-alpha",
+      "canonical_name_zh": "肿瘤坏死因子α",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "total_testosterone",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Total Testosterone",
+      "canonical_name_zh": "总睾酮",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "free_testosterone",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Free Testosterone",
+      "canonical_name_zh": "游离睾酮",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "measurement_or_calculation_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "sex_hormone_binding_globulin",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Sex Hormone-Binding Globulin",
+      "canonical_name_zh": "性激素结合球蛋白",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "estradiol",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Estradiol",
+      "canonical_name_zh": "雌二醇",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "dhea_s",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "DHEA-S",
+      "canonical_name_zh": "硫酸脱氢表雄酮",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "free_triiodothyronine",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Free Triiodothyronine",
+      "canonical_name_zh": "游离三碘甲状腺原氨酸",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "igf_1",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "IGF-1",
+      "canonical_name_zh": "胰岛素样生长因子1",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "prolactin",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Prolactin",
+      "canonical_name_zh": "泌乳素",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "vitamin_b12",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Vitamin B12",
+      "canonical_name_zh": "维生素B12",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "folate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Folate",
+      "canonical_name_zh": "叶酸",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "magnesium",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Magnesium",
+      "canonical_name_zh": "镁",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "zinc",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Zinc",
+      "canonical_name_zh": "锌",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "analyte",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "omega_3_index",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Omega-3 Index",
+      "canonical_name_zh": "Omega-3指数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "composition_measure",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "omega_6_omega_3_ratio",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Omega-6 / Omega-3 Ratio",
+      "canonical_name_zh": "Omega-6与Omega-3比值",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_ratio",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "biological_age_estimate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Biological Age Estimate",
+      "canonical_name_zh": "生物学年龄估算",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "model_estimate",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "epigenetic_age_estimate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Epigenetic Age Estimate",
+      "canonical_name_zh": "表观遗传年龄估算",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "model_estimate",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "glycan_age_estimate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Glycan Age Estimate",
+      "canonical_name_zh": "糖基化年龄估算",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "model_estimate",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "telomere_length",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Telomere Length",
+      "canonical_name_zh": "端粒长度",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "molecular_biomarker",
+      "construct_type": "molecular_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "advanced_glycation_end_products",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Advanced Glycation End Products",
+      "canonical_name_zh": "晚期糖基化终末产物",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "measurement_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "needs_review",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "carotid_ultrasound_procedure",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Carotid Ultrasound Procedure",
+      "canonical_name_zh": "颈动脉超声程序",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "diagnosis_medication_procedure",
+      "construct_type": "measurement_procedure",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "representation_or_procedure",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "dxa_bone_density_procedure",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "DXA Bone Density Procedure",
+      "canonical_name_zh": "DXA骨密度测量程序",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "diagnosis_medication_procedure",
+      "construct_type": "measurement_procedure",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "representation_or_procedure",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "vo2max_lab_test_procedure",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "VO2max Laboratory Test Procedure",
+      "canonical_name_zh": "最大摄氧量实验室测试程序",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "diagnosis_medication_procedure",
+      "construct_type": "measurement_procedure",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "representation_or_procedure",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "erythrocyte_sedimentation_rate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Erythrocyte Sedimentation Rate",
+      "canonical_name_zh": "红细胞沉降率",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "laboratory_biomarker",
+      "construct_type": "laboratory_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "continuous_glucose_monitoring_glucose",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Continuous Glucose Monitoring Measurement",
+      "canonical_name_zh": "连续葡萄糖监测测量",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_measured_signal",
+      "construct_type": "device_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "sleep_opportunity",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Sleep Opportunity",
+      "canonical_name_zh": "睡眠机会",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "behavior_lifestyle_record",
+      "construct_type": "sleep_interval_context",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "context_or_event_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "main_sleep_duration",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Main Sleep Duration",
+      "canonical_name_zh": "主要睡眠时长",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "total_24_hour_sleep",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Total 24-Hour Sleep",
+      "canonical_name_zh": "24小时总睡眠时长",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "physiological_measurement",
+      "construct_type": "sleep_interval_measurement",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "awakening_count",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Awakening Count",
+      "canonical_name_zh": "夜间觉醒次数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "sleep_event_count",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "sleep_stage_estimate",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Sleep Stage Estimate",
+      "canonical_name_zh": "睡眠阶段估算",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "classified_estimate",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "bedtime_event",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Bedtime Event",
+      "canonical_name_zh": "上床时间事件",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "behavior_lifestyle_record",
+      "construct_type": "event_time",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "context_or_event_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "wake_time_event",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Wake Time Event",
+      "canonical_name_zh": "起床时间事件",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "behavior_lifestyle_record",
+      "construct_type": "event_time",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "context_or_event_layer",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "sleep_midpoint",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Sleep Midpoint",
+      "canonical_name_zh": "睡眠中点",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "derived_time",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "perceived_stress_scale",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "QS",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Perceived Stress Scale",
+      "canonical_name_zh": "知觉压力量表",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "validated_questionnaire_scale",
+      "construct_type": "questionnaire_scale",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "phq_9",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "QS",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "PHQ-9",
+      "canonical_name_zh": "患者健康问卷-9",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "validated_questionnaire_scale",
+      "construct_type": "questionnaire_scale",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "gad_7",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "QS",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "GAD-7",
+      "canonical_name_zh": "广泛性焦虑障碍量表-7",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "validated_questionnaire_scale",
+      "construct_type": "questionnaire_scale",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "psqi",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "QS",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Pittsburgh Sleep Quality Index",
+      "canonical_name_zh": "匹兹堡睡眠质量指数",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "validated_questionnaire_scale",
+      "construct_type": "questionnaire_scale",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "registry_concept_candidate",
+      "numeric_id_eligible": true
+    },
+    {
+      "candidate_key": "organ_imaging_measure_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "ME",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Organ Imaging Measure Family",
+      "canonical_name_zh": "器官影像测量族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "imaging_derived_measure",
+      "construct_type": "future_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "multi_omics_measure_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Multi-Omics Measure Family",
+      "canonical_name_zh": "多组学测量族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "molecular_biomarker",
+      "construct_type": "research_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "genetic_variant_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Genetic Variant Family",
+      "canonical_name_zh": "遗传变异族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "molecular_biomarker",
+      "construct_type": "research_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "microbiome_measure_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "BM",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Microbiome Measure Family",
+      "canonical_name_zh": "微生物组测量族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "molecular_biomarker",
+      "construct_type": "research_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "disease_specific_risk_calculator_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": "SC",
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Disease-Specific Risk Calculator Family",
+      "canonical_name_zh": "疾病特异性风险计算器族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "derived_score_index",
+      "construct_type": "future_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "research_family",
+      "numeric_id_eligible": false
+    },
+    {
+      "candidate_key": "proprietary_device_metric_mapping_family",
+      "registry_id": null,
+      "scope": "extended",
+      "lifecycle_status": "proposed",
+      "namespace": null,
+      "review_class": "DEFERRED",
+      "semantic_status": "needs_review",
+      "canonical_name_en": "Proprietary Device Metric Mapping Family",
+      "canonical_name_zh": "专有设备指标映射族",
+      "aliases": [],
+      "source_assets": [
+        "spec/biomarker_schema_v0.1.md",
+        "agent/knowledge_seed_v0/registry_seed_001_founder_review_packet.v0.1.md"
+      ],
+      "information_type": "device_estimated_metric",
+      "construct_type": "mapping_family",
+      "future_placement": "extended_pool",
+      "preproduction_issues": [
+        "Semantic boundary, intended use, method/profile, and source evidence are not yet reviewed."
+      ],
+      "first_wave_proposed": false,
+      "numeric_id_status": "not_assigned",
+      "registry_eligibility": "device_mapping_layer",
+      "numeric_id_eligible": false
+    }
+  ],
+  "registry_eligibility_vocabulary": {
+    "planning_only": true,
+    "values": [
+      "registry_concept_candidate",
+      "representation_or_procedure",
+      "device_mapping_layer",
+      "context_or_event_layer",
+      "research_family",
+      "needs_review"
+    ]
+  }
+}

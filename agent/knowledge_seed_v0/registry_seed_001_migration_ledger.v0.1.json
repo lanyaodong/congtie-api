@@ -1,0 +1,3704 @@
+{
+  "document_metadata": {
+    "title": "Registry Seed 001 Legacy Migration Ledger v0.1",
+    "version": "v0.1",
+    "status": "Draft / Founder Review Pending",
+    "prepared_date": "2026-08-22",
+    "migration_completion_status": "not_completed",
+    "active_registry_records": 0,
+    "legacy_files_modified": false,
+    "source_coverage_expected": {
+      "BS12": 12,
+      "BR23": 23,
+      "LEGACY120_unique_labels": 107,
+      "MAP2": 27,
+      "total": 169
+    },
+    "source_coverage_actual": {
+      "BS12": 12,
+      "BR23": 23,
+      "LEGACY120_unique_labels": 107,
+      "MAP2": 27,
+      "total": 169
+    },
+    "legacy120_occurrences": 138,
+    "legacy120_exact_unique_labels": 107,
+    "needs_review_count": 53,
+    "silent_unmapped_count": 0,
+    "note": "Every audited source record or exact unique legacy label has an explicit candidate mapping, reference_only status, or needs_review status. This ledger does not claim migration is complete.",
+    "pre_c25_needs_review_count": 52,
+    "blocking_scope_counts": {
+      "core_preproduction": 10,
+      "extended_deferred": 26,
+      "first_wave_blocker": 0,
+      "nonblocking_group_split": 15,
+      "not_blocking": 118
+    },
+    "first_wave_blocker_count": 0,
+    "core_preproduction_count": 10,
+    "nonblocking_group_split_count": 15,
+    "extended_deferred_count": 26,
+    "c25_revision_note": "blocking_scope is migration-planning metadata. Grouped legacy rows do not block production of already separated candidate concepts; only unresolved First Wave identity issues are first_wave_blocker.",
+    "not_blocking_count": 118,
+    "c26_revision_note": "Legacy Sleep Duration mappings remain needs_review but do not block clean canonical Total Sleep Time record production. First Wave migration blockers are zero."
+  },
+  "relationship_vocabulary": [
+    "alias_of",
+    "maps_to",
+    "split_into",
+    "merged_into",
+    "duplicate_of",
+    "reference_only",
+    "supersede_planned",
+    "needs_review"
+  ],
+  "entries": [
+    {
+      "migration_entry_key": "BS12:rhr",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "rhr",
+      "legacy_code": "rhr",
+      "legacy_label": "Resting Heart Rate",
+      "semantic_cluster": "heart_rate",
+      "candidate_keys": [
+        "heart_rate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:hrv",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "hrv",
+      "legacy_code": "hrv",
+      "legacy_label": "Heart Rate Variability",
+      "semantic_cluster": "heart_rate_variability",
+      "candidate_keys": [
+        "heart_rate_variability"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Type, construct, or profile boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "BS12:vo2max",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "vo2max",
+      "legacy_code": "vo2max",
+      "legacy_label": "Maximum Oxygen Consumption (VO2max)",
+      "semantic_cluster": "cardiorespiratory_fitness_vo2max",
+      "candidate_keys": [
+        "cardiorespiratory_fitness_vo2max"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Type, construct, or profile boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "BS12:fpg",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "fpg",
+      "legacy_code": "fpg",
+      "legacy_label": "Fasting Plasma Glucose",
+      "semantic_cluster": "fasting_plasma_glucose",
+      "candidate_keys": [
+        "fasting_plasma_glucose"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:apob",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "apob",
+      "legacy_code": "apob",
+      "legacy_label": "Apolipoprotein B",
+      "semantic_cluster": "apolipoprotein_b",
+      "candidate_keys": [
+        "apolipoprotein_b"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:hbA1c",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "hbA1c",
+      "legacy_code": "hbA1c",
+      "legacy_label": "Glycated Hemoglobin (HbA1c)",
+      "semantic_cluster": "hba1c",
+      "candidate_keys": [
+        "hba1c"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:bp_sys",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "bp_sys",
+      "legacy_code": "bp_sys",
+      "legacy_label": "Systolic Blood Pressure",
+      "semantic_cluster": "systolic_blood_pressure",
+      "candidate_keys": [
+        "systolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:bp_dia",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "bp_dia",
+      "legacy_code": "bp_dia",
+      "legacy_label": "Diastolic Blood Pressure",
+      "semantic_cluster": "diastolic_blood_pressure",
+      "candidate_keys": [
+        "diastolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:bmd",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "bmd",
+      "legacy_code": "bmd",
+      "legacy_label": "Bone Mineral Density",
+      "semantic_cluster": "bone_mineral_density",
+      "candidate_keys": [
+        "bone_mineral_density"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Type, construct, or profile boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BS12:cog_score",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "cog_score",
+      "legacy_code": "cog_score",
+      "legacy_label": "Cognitive Function Score",
+      "semantic_cluster": "cognitive_score",
+      "candidate_keys": [
+        "cognitive_score"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Type, construct, or profile boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BS12:hsCRP",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "hsCRP",
+      "legacy_code": "hsCRP",
+      "legacy_label": "High-Sensitivity C-Reactive Protein",
+      "semantic_cluster": "high_sensitivity_c_reactive_protein",
+      "candidate_keys": [
+        "high_sensitivity_c_reactive_protein"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BS12:lymphocytes",
+      "source_family": "BS12",
+      "source_asset": "schemas/biomarker_schema_v0.1.json",
+      "source_record": "lymphocytes",
+      "legacy_code": "lymphocytes",
+      "legacy_label": "Lymphocyte Count",
+      "semantic_cluster": "lymphocyte_count",
+      "candidate_keys": [
+        "lymphocyte_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:vo2max",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "vo2max",
+      "legacy_code": "vo2max",
+      "legacy_label": "VO2max",
+      "semantic_cluster": "cardiorespiratory_fitness_vo2max",
+      "candidate_keys": [
+        "cardiorespiratory_fitness_vo2max"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "BR23:resting_heart_rate",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "resting_heart_rate",
+      "legacy_code": "resting_heart_rate",
+      "legacy_label": "Resting Heart Rate",
+      "semantic_cluster": "heart_rate",
+      "candidate_keys": [
+        "heart_rate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:hrv",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "hrv",
+      "legacy_code": "hrv",
+      "legacy_label": "Heart Rate Variability",
+      "semantic_cluster": "heart_rate_variability",
+      "candidate_keys": [
+        "heart_rate_variability"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "BR23:sleep_duration",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "sleep_duration",
+      "legacy_code": "sleep_duration",
+      "legacy_label": "Sleep Duration",
+      "semantic_cluster": "sleep_total_time",
+      "candidate_keys": [
+        "sleep_total_time"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Legacy import remains unresolved, but this does not block clean canonical Total Sleep Time record production.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:fasting_glucose",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "fasting_glucose",
+      "legacy_code": "fasting_glucose",
+      "legacy_label": "Fasting Glucose",
+      "semantic_cluster": "fasting_plasma_glucose",
+      "candidate_keys": [
+        "fasting_plasma_glucose"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:hba1c",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "hba1c",
+      "legacy_code": "hba1c",
+      "legacy_label": "HbA1c",
+      "semantic_cluster": "hba1c",
+      "candidate_keys": [
+        "hba1c"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:triglycerides",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "triglycerides",
+      "legacy_code": "triglycerides",
+      "legacy_label": "Triglycerides",
+      "semantic_cluster": "triglycerides",
+      "candidate_keys": [
+        "triglycerides"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:hdl",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "hdl",
+      "legacy_code": "hdl",
+      "legacy_label": "HDL Cholesterol",
+      "semantic_cluster": "hdl_cholesterol",
+      "candidate_keys": [
+        "hdl_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:waist_circumference",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "waist_circumference",
+      "legacy_code": "waist_circumference",
+      "legacy_label": "Waist Circumference",
+      "semantic_cluster": "waist_circumference",
+      "candidate_keys": [
+        "waist_circumference"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:apob",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "apob",
+      "legacy_code": "apob",
+      "legacy_label": "ApoB",
+      "semantic_cluster": "apolipoprotein_b",
+      "candidate_keys": [
+        "apolipoprotein_b"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:blood_pressure_systolic",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "blood_pressure_systolic",
+      "legacy_code": "blood_pressure_systolic",
+      "legacy_label": "Systolic Blood Pressure",
+      "semantic_cluster": "systolic_blood_pressure",
+      "candidate_keys": [
+        "systolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:blood_pressure_diastolic",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "blood_pressure_diastolic",
+      "legacy_code": "blood_pressure_diastolic",
+      "legacy_label": "Diastolic Blood Pressure",
+      "semantic_cluster": "diastolic_blood_pressure",
+      "candidate_keys": [
+        "diastolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:lp_a",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "lp_a",
+      "legacy_code": "lp_a",
+      "legacy_label": "Lipoprotein(a)",
+      "semantic_cluster": "lipoprotein_a",
+      "candidate_keys": [
+        "lipoprotein_a"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:grip_strength",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "grip_strength",
+      "legacy_code": "grip_strength",
+      "legacy_label": "Grip Strength",
+      "semantic_cluster": "grip_strength",
+      "candidate_keys": [
+        "grip_strength"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:lean_mass",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "lean_mass",
+      "legacy_code": "lean_mass",
+      "legacy_label": "Lean Mass",
+      "semantic_cluster": "lean_body_mass",
+      "candidate_keys": [
+        "lean_body_mass"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BR23:gait_speed",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "gait_speed",
+      "legacy_code": "gait_speed",
+      "legacy_label": "Gait Speed",
+      "semantic_cluster": "gait_speed",
+      "candidate_keys": [
+        "gait_speed"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:bone_mineral_density",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "bone_mineral_density",
+      "legacy_code": "bone_mineral_density",
+      "legacy_label": "Bone Mineral Density",
+      "semantic_cluster": "bone_mineral_density",
+      "candidate_keys": [
+        "bone_mineral_density"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BR23:sleep_quality",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "sleep_quality",
+      "legacy_code": "sleep_quality",
+      "legacy_label": "Sleep Quality",
+      "semantic_cluster": "sleep_quality_user_report",
+      "candidate_keys": [
+        "sleep_quality_user_report"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BR23:reaction_time",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "reaction_time",
+      "legacy_code": "reaction_time",
+      "legacy_label": "Reaction Time",
+      "semantic_cluster": "reaction_time",
+      "candidate_keys": [
+        "reaction_time"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:cognitive_score",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "cognitive_score",
+      "legacy_code": "cognitive_score",
+      "legacy_label": "Cognitive Score",
+      "semantic_cluster": "cognitive_score",
+      "candidate_keys": [
+        "cognitive_score"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Legacy type, procedure/result, or reported/estimated boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "BR23:hscrp",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "hscrp",
+      "legacy_code": "hscrp",
+      "legacy_label": "hsCRP",
+      "semantic_cluster": "high_sensitivity_c_reactive_protein",
+      "candidate_keys": [
+        "high_sensitivity_c_reactive_protein"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:white_blood_cell_count",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "white_blood_cell_count",
+      "legacy_code": "white_blood_cell_count",
+      "legacy_label": "White Blood Cell Count",
+      "semantic_cluster": "white_blood_cell_count",
+      "candidate_keys": [
+        "white_blood_cell_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "BR23:vitamin_d_25oh",
+      "source_family": "BR23",
+      "source_asset": "spec/biomarker_registry.v0.1.json",
+      "source_record": "vitamin_d_25oh",
+      "legacy_code": "vitamin_d_25oh",
+      "legacy_label": "Vitamin D (25-OH)",
+      "semantic_cluster": "25_hydroxyvitamin_d",
+      "candidate_keys": [
+        "25_hydroxyvitamin_d"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_001",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_001",
+      "legacy_code": null,
+      "legacy_label": "VO2max",
+      "semantic_cluster": "cardiorespiratory_fitness_vo2max",
+      "candidate_keys": [
+        "cardiorespiratory_fitness_vo2max"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Energy System",
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_002",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_002",
+      "legacy_code": null,
+      "legacy_label": "Resting Heart Rate",
+      "semantic_cluster": "heart_rate",
+      "candidate_keys": [
+        "heart_rate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Energy System",
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_003",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_003",
+      "legacy_code": null,
+      "legacy_label": "HRV",
+      "semantic_cluster": "heart_rate_variability",
+      "candidate_keys": [
+        "heart_rate_variability"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Energy System",
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_004",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_004",
+      "legacy_code": null,
+      "legacy_label": "Sleep Duration",
+      "semantic_cluster": "sleep_total_time",
+      "candidate_keys": [
+        "sleep_total_time"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Legacy import remains unresolved, but this does not block clean canonical Total Sleep Time record production.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Energy System",
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_005",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_005",
+      "legacy_code": null,
+      "legacy_label": "Heart Rate Variability (RMSSD)",
+      "semantic_cluster": "heart_rate_variability",
+      "candidate_keys": [
+        "heart_rate_variability"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_006",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_006",
+      "legacy_code": null,
+      "legacy_label": "Sleep Efficiency",
+      "semantic_cluster": "sleep_efficiency",
+      "candidate_keys": [
+        "sleep_efficiency"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Energy System",
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_007",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_007",
+      "legacy_code": null,
+      "legacy_label": "Respiratory Rate (sleep)",
+      "semantic_cluster": "respiratory_rate",
+      "candidate_keys": [
+        "respiratory_rate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_008",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_008",
+      "legacy_code": null,
+      "legacy_label": "Blood Lactate",
+      "semantic_cluster": "blood_lactate",
+      "candidate_keys": [
+        "blood_lactate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_009",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_009",
+      "legacy_code": null,
+      "legacy_label": "Creatine Kinase",
+      "semantic_cluster": "creatine_kinase",
+      "candidate_keys": [
+        "creatine_kinase"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_010",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_010",
+      "legacy_code": null,
+      "legacy_label": "Ferritin",
+      "semantic_cluster": "ferritin",
+      "candidate_keys": [
+        "ferritin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Energy System",
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_011",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_011",
+      "legacy_code": null,
+      "legacy_label": "Hemoglobin",
+      "semantic_cluster": "hemoglobin",
+      "candidate_keys": [
+        "hemoglobin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_012",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_012",
+      "legacy_code": null,
+      "legacy_label": "Hematocrit",
+      "semantic_cluster": "hematocrit",
+      "candidate_keys": [
+        "hematocrit"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_013",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_013",
+      "legacy_code": null,
+      "legacy_label": "Red Blood Cell Count",
+      "semantic_cluster": "red_blood_cell_count",
+      "candidate_keys": [
+        "red_blood_cell_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_014",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_014",
+      "legacy_code": null,
+      "legacy_label": "Oxygen Saturation",
+      "semantic_cluster": "oxygen_saturation",
+      "candidate_keys": [
+        "oxygen_saturation"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_015",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_015",
+      "legacy_code": null,
+      "legacy_label": "Basal Metabolic Rate",
+      "semantic_cluster": "basal_metabolic_rate",
+      "candidate_keys": [
+        "basal_metabolic_rate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Energy System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_016",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_016",
+      "legacy_code": null,
+      "legacy_label": "HbA1c",
+      "semantic_cluster": "hba1c",
+      "candidate_keys": [
+        "hba1c"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_017",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_017",
+      "legacy_code": null,
+      "legacy_label": "Fasting Glucose",
+      "semantic_cluster": "fasting_plasma_glucose",
+      "candidate_keys": [
+        "fasting_plasma_glucose"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_018",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_018",
+      "legacy_code": null,
+      "legacy_label": "Triglycerides",
+      "semantic_cluster": "triglycerides",
+      "candidate_keys": [
+        "triglycerides"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_019",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_019",
+      "legacy_code": null,
+      "legacy_label": "HDL",
+      "semantic_cluster": "hdl_cholesterol",
+      "candidate_keys": [
+        "hdl_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_020",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_020",
+      "legacy_code": null,
+      "legacy_label": "Waist Circumference",
+      "semantic_cluster": "waist_circumference",
+      "candidate_keys": [
+        "waist_circumference"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_021",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_021",
+      "legacy_code": null,
+      "legacy_label": "Fasting Insulin",
+      "semantic_cluster": "fasting_insulin",
+      "candidate_keys": [
+        "fasting_insulin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_022",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_022",
+      "legacy_code": null,
+      "legacy_label": "HOMA-IR",
+      "semantic_cluster": "homa_ir",
+      "candidate_keys": [
+        "homa_ir"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_023",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_023",
+      "legacy_code": null,
+      "legacy_label": "C-Peptide",
+      "semantic_cluster": "c_peptide",
+      "candidate_keys": [
+        "c_peptide"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_024",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_024",
+      "legacy_code": null,
+      "legacy_label": "LDL",
+      "semantic_cluster": "ldl_cholesterol",
+      "candidate_keys": [
+        "ldl_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_025",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_025",
+      "legacy_code": null,
+      "legacy_label": "Total Cholesterol",
+      "semantic_cluster": "total_cholesterol",
+      "candidate_keys": [
+        "total_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_026",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_026",
+      "legacy_code": null,
+      "legacy_label": "Triglyceride/HDL Ratio",
+      "semantic_cluster": "triglyceride_hdl_ratio",
+      "candidate_keys": [
+        "triglyceride_hdl_ratio"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_027",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_027",
+      "legacy_code": null,
+      "legacy_label": "ApoB",
+      "semantic_cluster": "apolipoprotein_b",
+      "candidate_keys": [
+        "apolipoprotein_b"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Metabolic System",
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_028",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_028",
+      "legacy_code": null,
+      "legacy_label": "ApoA1",
+      "semantic_cluster": "apolipoprotein_a1",
+      "candidate_keys": [
+        "apolipoprotein_a1"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System",
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_029",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_029",
+      "legacy_code": null,
+      "legacy_label": "Lp(a)",
+      "semantic_cluster": "lipoprotein_a",
+      "candidate_keys": [
+        "lipoprotein_a"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 3,
+      "source_sections": [
+        "Metabolic System",
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_030",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_030",
+      "legacy_code": null,
+      "legacy_label": "Uric Acid",
+      "semantic_cluster": "uric_acid",
+      "candidate_keys": [
+        "uric_acid"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_031",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_031",
+      "legacy_code": null,
+      "legacy_label": "Leptin",
+      "semantic_cluster": "leptin",
+      "candidate_keys": [
+        "leptin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_032",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_032",
+      "legacy_code": null,
+      "legacy_label": "Adiponectin",
+      "semantic_cluster": "adiponectin",
+      "candidate_keys": [
+        "adiponectin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_033",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_033",
+      "legacy_code": null,
+      "legacy_label": "Body Fat Percentage",
+      "semantic_cluster": "body_fat_percentage",
+      "candidate_keys": [
+        "body_fat_percentage"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Metabolic System",
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_034",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_034",
+      "legacy_code": null,
+      "legacy_label": "Visceral Fat",
+      "semantic_cluster": "visceral_fat",
+      "candidate_keys": [
+        "visceral_fat"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Metabolic System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_035",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_035",
+      "legacy_code": null,
+      "legacy_label": "Blood Pressure",
+      "semantic_cluster": "systolic_blood_pressure+diastolic_blood_pressure",
+      "candidate_keys": [
+        "systolic_blood_pressure",
+        "diastolic_blood_pressure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_036",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_036",
+      "legacy_code": null,
+      "legacy_label": "hsCRP",
+      "semantic_cluster": "high_sensitivity_c_reactive_protein",
+      "candidate_keys": [
+        "high_sensitivity_c_reactive_protein"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 4,
+      "source_sections": [
+        "Cardiopulmonary System",
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_037",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_037",
+      "legacy_code": null,
+      "legacy_label": "Blood Pressure (systolic)",
+      "semantic_cluster": "systolic_blood_pressure",
+      "candidate_keys": [
+        "systolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_038",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_038",
+      "legacy_code": null,
+      "legacy_label": "Blood Pressure (diastolic)",
+      "semantic_cluster": "diastolic_blood_pressure",
+      "candidate_keys": [
+        "diastolic_blood_pressure"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_039",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_039",
+      "legacy_code": null,
+      "legacy_label": "Fibrinogen",
+      "semantic_cluster": "fibrinogen",
+      "candidate_keys": [
+        "fibrinogen"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_040",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_040",
+      "legacy_code": null,
+      "legacy_label": "Homocysteine",
+      "semantic_cluster": "homocysteine",
+      "candidate_keys": [
+        "homocysteine"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_041",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_041",
+      "legacy_code": null,
+      "legacy_label": "NT-proBNP",
+      "semantic_cluster": "nt_probnp",
+      "candidate_keys": [
+        "nt_probnp"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_042",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_042",
+      "legacy_code": null,
+      "legacy_label": "High Sensitivity Troponin",
+      "semantic_cluster": "high_sensitivity_troponin",
+      "candidate_keys": [
+        "high_sensitivity_troponin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_043",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_043",
+      "legacy_code": null,
+      "legacy_label": "LDL Particle Number",
+      "semantic_cluster": "ldl_particle_number",
+      "candidate_keys": [
+        "ldl_particle_number"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_044",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_044",
+      "legacy_code": null,
+      "legacy_label": "Small Dense LDL",
+      "semantic_cluster": "small_dense_ldl",
+      "candidate_keys": [
+        "small_dense_ldl"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_045",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_045",
+      "legacy_code": null,
+      "legacy_label": "Carotid IMT",
+      "semantic_cluster": "carotid_intima_media_thickness",
+      "candidate_keys": [
+        "carotid_intima_media_thickness"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_046",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_046",
+      "legacy_code": null,
+      "legacy_label": "Coronary Artery Calcium Score",
+      "semantic_cluster": "coronary_artery_calcium_score",
+      "candidate_keys": [
+        "coronary_artery_calcium_score"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_047",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_047",
+      "legacy_code": null,
+      "legacy_label": "Pulse Wave Velocity",
+      "semantic_cluster": "pulse_wave_velocity",
+      "candidate_keys": [
+        "pulse_wave_velocity"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Cardiopulmonary System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_048",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_048",
+      "legacy_code": null,
+      "legacy_label": "Grip Strength",
+      "semantic_cluster": "grip_strength",
+      "candidate_keys": [
+        "grip_strength"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_049",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_049",
+      "legacy_code": null,
+      "legacy_label": "Lean Mass",
+      "semantic_cluster": "lean_body_mass",
+      "candidate_keys": [
+        "lean_body_mass"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_050",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_050",
+      "legacy_code": null,
+      "legacy_label": "Lean Body Mass",
+      "semantic_cluster": "lean_body_mass",
+      "candidate_keys": [
+        "lean_body_mass"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_051",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_051",
+      "legacy_code": null,
+      "legacy_label": "Skeletal Muscle Mass",
+      "semantic_cluster": "skeletal_muscle_mass",
+      "candidate_keys": [
+        "skeletal_muscle_mass"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_052",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_052",
+      "legacy_code": null,
+      "legacy_label": "Bone Mineral Density",
+      "semantic_cluster": "bone_mineral_density",
+      "candidate_keys": [
+        "bone_mineral_density"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_053",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_053",
+      "legacy_code": null,
+      "legacy_label": "DEXA Body Composition",
+      "semantic_cluster": "dxa_body_composition_procedure",
+      "candidate_keys": [
+        "dxa_body_composition_procedure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Musculoskeletal System",
+        "Imaging & Functional Tests"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_054",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_054",
+      "legacy_code": null,
+      "legacy_label": "Gait Speed",
+      "semantic_cluster": "gait_speed",
+      "candidate_keys": [
+        "gait_speed"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_055",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_055",
+      "legacy_code": null,
+      "legacy_label": "Chair Stand Test",
+      "semantic_cluster": "chair_stand_test",
+      "candidate_keys": [
+        "chair_stand_test"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_056",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_056",
+      "legacy_code": null,
+      "legacy_label": "Balance Test",
+      "semantic_cluster": "generic_balance_test_measure",
+      "candidate_keys": [
+        "generic_balance_test_measure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Musculoskeletal System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_057",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_057",
+      "legacy_code": null,
+      "legacy_label": "Creatinine",
+      "semantic_cluster": "creatinine",
+      "candidate_keys": [
+        "creatinine"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Musculoskeletal System",
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_058",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_058",
+      "legacy_code": null,
+      "legacy_label": "Sleep Quality",
+      "semantic_cluster": "sleep_quality_user_report",
+      "candidate_keys": [
+        "sleep_quality_user_report"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_059",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_059",
+      "legacy_code": null,
+      "legacy_label": "Reaction Time",
+      "semantic_cluster": "reaction_time",
+      "candidate_keys": [
+        "reaction_time"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_060",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_060",
+      "legacy_code": null,
+      "legacy_label": "Deep Sleep Time",
+      "semantic_cluster": "deep_sleep_duration",
+      "candidate_keys": [
+        "deep_sleep_duration"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_061",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_061",
+      "legacy_code": null,
+      "legacy_label": "REM Sleep",
+      "semantic_cluster": "rem_sleep_duration",
+      "candidate_keys": [
+        "rem_sleep_duration"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_062",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_062",
+      "legacy_code": null,
+      "legacy_label": "Cognitive Score",
+      "semantic_cluster": "cognitive_score",
+      "candidate_keys": [
+        "cognitive_score"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_063",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_063",
+      "legacy_code": null,
+      "legacy_label": "Cortisol (morning)",
+      "semantic_cluster": "cortisol",
+      "candidate_keys": [
+        "cortisol"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_064",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_064",
+      "legacy_code": null,
+      "legacy_label": "Cortisol (evening)",
+      "semantic_cluster": "cortisol",
+      "candidate_keys": [
+        "cortisol"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_065",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_065",
+      "legacy_code": null,
+      "legacy_label": "BDNF",
+      "semantic_cluster": "bdnf",
+      "candidate_keys": [
+        "bdnf"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Neurocognitive System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_066",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_066",
+      "legacy_code": null,
+      "legacy_label": "White Blood Cell Count",
+      "semantic_cluster": "white_blood_cell_count",
+      "candidate_keys": [
+        "white_blood_cell_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_067",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_067",
+      "legacy_code": null,
+      "legacy_label": "Vitamin D",
+      "semantic_cluster": "25_hydroxyvitamin_d",
+      "candidate_keys": [
+        "25_hydroxyvitamin_d"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 2,
+      "source_sections": [
+        "Repair Immune System",
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_068",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_068",
+      "legacy_code": null,
+      "legacy_label": "Neutrophils",
+      "semantic_cluster": "neutrophil_count",
+      "candidate_keys": [
+        "neutrophil_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_069",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_069",
+      "legacy_code": null,
+      "legacy_label": "Lymphocytes",
+      "semantic_cluster": "lymphocyte_count",
+      "candidate_keys": [
+        "lymphocyte_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_070",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_070",
+      "legacy_code": null,
+      "legacy_label": "Monocytes",
+      "semantic_cluster": "monocyte_count",
+      "candidate_keys": [
+        "monocyte_count"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_071",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_071",
+      "legacy_code": null,
+      "legacy_label": "NLR Ratio",
+      "semantic_cluster": "neutrophil_lymphocyte_ratio",
+      "candidate_keys": [
+        "neutrophil_lymphocyte_ratio"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_072",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_072",
+      "legacy_code": null,
+      "legacy_label": "Vitamin D (25-OH)",
+      "semantic_cluster": "25_hydroxyvitamin_d",
+      "candidate_keys": [
+        "25_hydroxyvitamin_d"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_073",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_073",
+      "legacy_code": null,
+      "legacy_label": "Interleukin-6",
+      "semantic_cluster": "interleukin_6",
+      "candidate_keys": [
+        "interleukin_6"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_074",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_074",
+      "legacy_code": null,
+      "legacy_label": "TNF-alpha",
+      "semantic_cluster": "tnf_alpha",
+      "candidate_keys": [
+        "tnf_alpha"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Repair Immune System"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_075",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_075",
+      "legacy_code": null,
+      "legacy_label": "ALT",
+      "semantic_cluster": "alanine_aminotransferase",
+      "candidate_keys": [
+        "alanine_aminotransferase"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_076",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_076",
+      "legacy_code": null,
+      "legacy_label": "AST",
+      "semantic_cluster": "aspartate_aminotransferase",
+      "candidate_keys": [
+        "aspartate_aminotransferase"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_077",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_077",
+      "legacy_code": null,
+      "legacy_label": "ALP",
+      "semantic_cluster": "alkaline_phosphatase",
+      "candidate_keys": [
+        "alkaline_phosphatase"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_078",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_078",
+      "legacy_code": null,
+      "legacy_label": "GGT",
+      "semantic_cluster": "gamma_glutamyl_transferase",
+      "candidate_keys": [
+        "gamma_glutamyl_transferase"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_079",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_079",
+      "legacy_code": null,
+      "legacy_label": "Bilirubin",
+      "semantic_cluster": "total_bilirubin",
+      "candidate_keys": [
+        "total_bilirubin"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Candidate mapping is provisional; generic source labels must not be silently treated as total bilirubin.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Generic bilirubin label requires report/source context before mapping to total bilirubin.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_080",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_080",
+      "legacy_code": null,
+      "legacy_label": "Albumin",
+      "semantic_cluster": "albumin",
+      "candidate_keys": [
+        "albumin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_081",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_081",
+      "legacy_code": null,
+      "legacy_label": "eGFR",
+      "semantic_cluster": "estimated_glomerular_filtration_rate",
+      "candidate_keys": [
+        "estimated_glomerular_filtration_rate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_082",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_082",
+      "legacy_code": null,
+      "legacy_label": "BUN",
+      "semantic_cluster": "urea_bun_construct",
+      "candidate_keys": [
+        "urea_bun_construct"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Organ Function"
+      ],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_083",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_083",
+      "legacy_code": null,
+      "legacy_label": "Testosterone",
+      "semantic_cluster": "total_testosterone",
+      "candidate_keys": [
+        "total_testosterone"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_084",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_084",
+      "legacy_code": null,
+      "legacy_label": "Free Testosterone",
+      "semantic_cluster": "free_testosterone",
+      "candidate_keys": [
+        "free_testosterone"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_085",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_085",
+      "legacy_code": null,
+      "legacy_label": "SHBG",
+      "semantic_cluster": "sex_hormone_binding_globulin",
+      "candidate_keys": [
+        "sex_hormone_binding_globulin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_086",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_086",
+      "legacy_code": null,
+      "legacy_label": "Estradiol",
+      "semantic_cluster": "estradiol",
+      "candidate_keys": [
+        "estradiol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_087",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_087",
+      "legacy_code": null,
+      "legacy_label": "DHEA-S",
+      "semantic_cluster": "dhea_s",
+      "candidate_keys": [
+        "dhea_s"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_088",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_088",
+      "legacy_code": null,
+      "legacy_label": "TSH",
+      "semantic_cluster": "thyroid_stimulating_hormone",
+      "candidate_keys": [
+        "thyroid_stimulating_hormone"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_089",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_089",
+      "legacy_code": null,
+      "legacy_label": "Free T3",
+      "semantic_cluster": "free_triiodothyronine",
+      "candidate_keys": [
+        "free_triiodothyronine"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_090",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_090",
+      "legacy_code": null,
+      "legacy_label": "Free T4",
+      "semantic_cluster": "free_thyroxine",
+      "candidate_keys": [
+        "free_thyroxine"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_091",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_091",
+      "legacy_code": null,
+      "legacy_label": "IGF-1",
+      "semantic_cluster": "igf_1",
+      "candidate_keys": [
+        "igf_1"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_092",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_092",
+      "legacy_code": null,
+      "legacy_label": "Prolactin",
+      "semantic_cluster": "prolactin",
+      "candidate_keys": [
+        "prolactin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Hormones"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_093",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_093",
+      "legacy_code": null,
+      "legacy_label": "Vitamin B12",
+      "semantic_cluster": "vitamin_b12",
+      "candidate_keys": [
+        "vitamin_b12"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_094",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_094",
+      "legacy_code": null,
+      "legacy_label": "Folate",
+      "semantic_cluster": "folate",
+      "candidate_keys": [
+        "folate"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_095",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_095",
+      "legacy_code": null,
+      "legacy_label": "Magnesium",
+      "semantic_cluster": "magnesium",
+      "candidate_keys": [
+        "magnesium"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_096",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_096",
+      "legacy_code": null,
+      "legacy_label": "Zinc",
+      "semantic_cluster": "zinc",
+      "candidate_keys": [
+        "zinc"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_097",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_097",
+      "legacy_code": null,
+      "legacy_label": "Omega-3 Index",
+      "semantic_cluster": "omega_3_index",
+      "candidate_keys": [
+        "omega_3_index"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_098",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_098",
+      "legacy_code": null,
+      "legacy_label": "Omega-6 / Omega-3 Ratio",
+      "semantic_cluster": "omega_6_omega_3_ratio",
+      "candidate_keys": [
+        "omega_6_omega_3_ratio"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Nutrient Status"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_099",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_099",
+      "legacy_code": null,
+      "legacy_label": "Biological Age",
+      "semantic_cluster": "biological_age_estimate",
+      "candidate_keys": [
+        "biological_age_estimate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Aging Biomarkers"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_100",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_100",
+      "legacy_code": null,
+      "legacy_label": "Epigenetic Age",
+      "semantic_cluster": "epigenetic_age_estimate",
+      "candidate_keys": [
+        "epigenetic_age_estimate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Aging Biomarkers"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_101",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_101",
+      "legacy_code": null,
+      "legacy_label": "Glycan Age",
+      "semantic_cluster": "glycan_age_estimate",
+      "candidate_keys": [
+        "glycan_age_estimate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Aging Biomarkers"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_102",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_102",
+      "legacy_code": null,
+      "legacy_label": "Telomere Length",
+      "semantic_cluster": "telomere_length",
+      "candidate_keys": [
+        "telomere_length"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Aging Biomarkers"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_103",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_103",
+      "legacy_code": null,
+      "legacy_label": "Advanced Glycation End Products",
+      "semantic_cluster": "advanced_glycation_end_products",
+      "candidate_keys": [
+        "advanced_glycation_end_products"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Aging Biomarkers"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_104",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_104",
+      "legacy_code": null,
+      "legacy_label": "Carotid Ultrasound",
+      "semantic_cluster": "carotid_ultrasound_procedure",
+      "candidate_keys": [
+        "carotid_ultrasound_procedure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Imaging & Functional Tests"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_105",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_105",
+      "legacy_code": null,
+      "legacy_label": "CAC Score",
+      "semantic_cluster": "coronary_artery_calcium_score",
+      "candidate_keys": [
+        "coronary_artery_calcium_score"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Imaging & Functional Tests"
+      ],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_106",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_106",
+      "legacy_code": null,
+      "legacy_label": "DEXA Bone Density",
+      "semantic_cluster": "dxa_bone_density_procedure",
+      "candidate_keys": [
+        "dxa_bone_density_procedure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Imaging & Functional Tests"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "LEGACY120:unique_label_107",
+      "source_family": "LEGACY120",
+      "source_asset": "spec/biomarker_schema_v0.1.md",
+      "source_record": "unique_label_107",
+      "legacy_code": null,
+      "legacy_label": "VO2max Lab Test",
+      "semantic_cluster": "vo2max_lab_test_procedure",
+      "candidate_keys": [
+        "vo2max_lab_test_procedure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Semantic identity, profile split, or representation type requires review.",
+      "source_occurrence_count": 1,
+      "source_sections": [
+        "Imaging & Functional Tests"
+      ],
+      "blocking_scope": "extended_deferred"
+    },
+    {
+      "migration_entry_key": "MAP2:glucose_hba1c",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "glucose_hba1c",
+      "legacy_code": "glucose_hba1c",
+      "legacy_label": "glucose / HbA1c",
+      "semantic_cluster": "fasting_plasma_glucose+hba1c",
+      "candidate_keys": [
+        "fasting_plasma_glucose",
+        "hba1c"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:fasting_insulin_homa_ir_cgm",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "fasting_insulin_homa_ir_cgm",
+      "legacy_code": "fasting_insulin_homa_ir_cgm",
+      "legacy_label": "fasting insulin / HOMA-IR / CGM",
+      "semantic_cluster": "fasting_insulin+homa_ir+continuous_glucose_monitoring_glucose",
+      "candidate_keys": [
+        "fasting_insulin",
+        "homa_ir",
+        "continuous_glucose_monitoring_glucose"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:apob_ldl_c",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "apob_ldl_c",
+      "legacy_code": "apob_ldl_c",
+      "legacy_label": "ApoB / LDL-C",
+      "semantic_cluster": "apolipoprotein_b+ldl_cholesterol",
+      "candidate_keys": [
+        "apolipoprotein_b",
+        "ldl_cholesterol"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:triglycerides",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "triglycerides",
+      "legacy_code": "triglycerides",
+      "legacy_label": "Triglycerides",
+      "semantic_cluster": "triglycerides",
+      "candidate_keys": [
+        "triglycerides"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:non_hdl_c",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "non_hdl_c",
+      "legacy_code": "non_hdl_c",
+      "legacy_label": "Non-HDL-C",
+      "semantic_cluster": "non_hdl_cholesterol",
+      "candidate_keys": [
+        "non_hdl_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:hs_crp_esr",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "hs_crp_esr",
+      "legacy_code": "hs_crp_esr",
+      "legacy_label": "hs-CRP / ESR",
+      "semantic_cluster": "high_sensitivity_c_reactive_protein+erythrocyte_sedimentation_rate",
+      "candidate_keys": [
+        "high_sensitivity_c_reactive_protein",
+        "erythrocyte_sedimentation_rate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:cbc_wbc_pattern",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "cbc_wbc_pattern",
+      "legacy_code": "cbc_wbc_pattern",
+      "legacy_label": "CBC / WBC pattern",
+      "semantic_cluster": "white_blood_cell_count+hemoglobin+hematocrit+red_blood_cell_count+platelet_count",
+      "candidate_keys": [
+        "white_blood_cell_count",
+        "hemoglobin",
+        "hematocrit",
+        "red_blood_cell_count",
+        "platelet_count"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:ferritin",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "ferritin",
+      "legacy_code": "ferritin",
+      "legacy_label": "ferritin",
+      "semantic_cluster": "ferritin",
+      "candidate_keys": [
+        "ferritin"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:vitamin_d",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "vitamin_d",
+      "legacy_code": "vitamin_d",
+      "legacy_label": "vitamin D",
+      "semantic_cluster": "25_hydroxyvitamin_d",
+      "candidate_keys": [
+        "25_hydroxyvitamin_d"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:b12_folate",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "b12_folate",
+      "legacy_code": "b12_folate",
+      "legacy_label": "B12 / folate",
+      "semantic_cluster": "vitamin_b12+folate",
+      "candidate_keys": [
+        "vitamin_b12",
+        "folate"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:thyroid_markers",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "thyroid_markers",
+      "legacy_code": "thyroid_markers",
+      "legacy_label": "thyroid markers",
+      "semantic_cluster": "thyroid_stimulating_hormone+free_thyroxine+free_triiodothyronine",
+      "candidate_keys": [
+        "thyroid_stimulating_hormone",
+        "free_thyroxine",
+        "free_triiodothyronine"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:liver_kidney_markers",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "liver_kidney_markers",
+      "legacy_code": "liver_kidney_markers",
+      "legacy_label": "liver / kidney markers",
+      "semantic_cluster": "alanine_aminotransferase+aspartate_aminotransferase+alkaline_phosphatase+gamma_glutamyl_transferase+total_bilirubin+albumin+creatinine+estimated_glomerular_filtration_rate+urea_bun_construct",
+      "candidate_keys": [
+        "alanine_aminotransferase",
+        "aspartate_aminotransferase",
+        "alkaline_phosphatase",
+        "gamma_glutamyl_transferase",
+        "total_bilirubin",
+        "albumin",
+        "creatinine",
+        "estimated_glomerular_filtration_rate",
+        "urea_bun_construct"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:vo2max",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "vo2max",
+      "legacy_code": "vo2max",
+      "legacy_label": "VO2max",
+      "semantic_cluster": "cardiorespiratory_fitness_vo2max",
+      "candidate_keys": [
+        "cardiorespiratory_fitness_vo2max"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Concept/profile boundary requires review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "core_preproduction"
+    },
+    {
+      "migration_entry_key": "MAP2:resting_heart_rate_hrv",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "resting_heart_rate_hrv",
+      "legacy_code": "resting_heart_rate_hrv",
+      "legacy_label": "resting heart rate / HRV",
+      "semantic_cluster": "heart_rate+heart_rate_variability",
+      "candidate_keys": [
+        "heart_rate",
+        "heart_rate_variability"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:sleep_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "sleep_context",
+      "legacy_code": "sleep_context",
+      "legacy_label": "sleep",
+      "semantic_cluster": "sleep_total_time+time_in_bed+sleep_latency+wake_after_sleep_onset+sleep_efficiency+sleep_quality_user_report",
+      "candidate_keys": [
+        "sleep_total_time",
+        "time_in_bed",
+        "sleep_latency",
+        "wake_after_sleep_onset",
+        "sleep_efficiency",
+        "sleep_quality_user_report"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:stress_mood_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "stress_mood_context",
+      "legacy_code": "stress_mood_context",
+      "legacy_label": "stress / mood",
+      "semantic_cluster": null,
+      "candidate_keys": [],
+      "migration_status": "reference_only",
+      "relationship": "reference_only",
+      "migration_note": "Context/safety grouping is preserved as historical product context and is not promoted to a measurement Registry concept.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:body_composition_lean_mass",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "body_composition_lean_mass",
+      "legacy_code": "body_composition_lean_mass",
+      "legacy_label": "body composition / lean mass",
+      "semantic_cluster": "body_fat_percentage+lean_body_mass+skeletal_muscle_mass",
+      "candidate_keys": [
+        "body_fat_percentage",
+        "lean_body_mass",
+        "skeletal_muscle_mass"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:dxa_bone_density",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "dxa_bone_density",
+      "legacy_code": "dxa_bone_density",
+      "legacy_label": "DXA / bone density",
+      "semantic_cluster": "bone_mineral_density+dxa_body_composition_procedure+dxa_bone_density_procedure",
+      "candidate_keys": [
+        "bone_mineral_density",
+        "dxa_body_composition_procedure",
+        "dxa_bone_density_procedure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:symptoms_safety_screen",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "symptoms_safety_screen",
+      "legacy_code": "symptoms_safety_screen",
+      "legacy_label": "symptoms / safety screen",
+      "semantic_cluster": null,
+      "candidate_keys": [],
+      "migration_status": "reference_only",
+      "relationship": "reference_only",
+      "migration_note": "Context/safety grouping is preserved as historical product context and is not promoted to a measurement Registry concept.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:blood_pressure_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "blood_pressure_context",
+      "legacy_code": "blood_pressure_context",
+      "legacy_label": "Blood Pressure Context",
+      "semantic_cluster": "systolic_blood_pressure+diastolic_blood_pressure",
+      "candidate_keys": [
+        "systolic_blood_pressure",
+        "diastolic_blood_pressure"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:lipoprotein_a",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "lipoprotein_a",
+      "legacy_code": "lipoprotein_a",
+      "legacy_label": "Lipoprotein(a)",
+      "semantic_cluster": "lipoprotein_a",
+      "candidate_keys": [
+        "lipoprotein_a"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:hdl_c_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "hdl_c_context",
+      "legacy_code": "hdl_c_context",
+      "legacy_label": "HDL-C Context",
+      "semantic_cluster": "hdl_cholesterol",
+      "candidate_keys": [
+        "hdl_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:total_cholesterol_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "total_cholesterol_context",
+      "legacy_code": "total_cholesterol_context",
+      "legacy_label": "Total Cholesterol Context",
+      "semantic_cluster": "total_cholesterol",
+      "candidate_keys": [
+        "total_cholesterol"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:waist_circumference_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "waist_circumference_context",
+      "legacy_code": "waist_circumference_context",
+      "legacy_label": "Waist Circumference Context",
+      "semantic_cluster": "waist_circumference",
+      "candidate_keys": [
+        "waist_circumference"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:weight_bmi_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "weight_bmi_context",
+      "legacy_code": "weight_bmi_context",
+      "legacy_label": "Weight / BMI Context",
+      "semantic_cluster": "body_weight+body_mass_index",
+      "candidate_keys": [
+        "body_weight",
+        "body_mass_index"
+      ],
+      "migration_status": "needs_review",
+      "relationship": "split_into",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "pending",
+      "unresolved_issue": "Grouped row requires split and relation review.",
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "nonblocking_group_split"
+    },
+    {
+      "migration_entry_key": "MAP2:grip_strength_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "grip_strength_context",
+      "legacy_code": "grip_strength_context",
+      "legacy_label": "Grip Strength Context",
+      "semantic_cluster": "grip_strength",
+      "candidate_keys": [
+        "grip_strength"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    },
+    {
+      "migration_entry_key": "MAP2:gait_speed_mobility_context",
+      "source_family": "MAP2",
+      "source_asset": "agent/biomarker_system_map.v0.2.draft.json",
+      "source_record": "gait_speed_mobility_context",
+      "legacy_code": "gait_speed_mobility_context",
+      "legacy_label": "Gait Speed / Mobility Context",
+      "semantic_cluster": "gait_speed",
+      "candidate_keys": [
+        "gait_speed"
+      ],
+      "migration_status": "mapped_candidate",
+      "relationship": "maps_to",
+      "migration_note": "Source meaning retained for candidate-level semantic review; legacy authority is not transferred automatically.",
+      "split_merge_decision": "not_required",
+      "unresolved_issue": null,
+      "source_occurrence_count": null,
+      "source_sections": [],
+      "blocking_scope": "not_blocking"
+    }
+  ],
+  "blocking_scope_vocabulary": {
+    "planning_only": true,
+    "values": [
+      "first_wave_blocker",
+      "core_preproduction",
+      "nonblocking_group_split",
+      "extended_deferred",
+      "not_blocking"
+    ]
+  }
+}
