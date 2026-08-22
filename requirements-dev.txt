@@ -1,0 +1,4 @@
+# Development and authoring-governance dependencies only.
+# This file is not part of the Congtie Agent runtime dependency set.
+
+jsonschema[format]==4.25.1

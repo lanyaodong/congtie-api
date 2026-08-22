@@ -77,3 +77,41 @@ jobs:
         with:
           name: uvicorn-log
           path: uvicorn.log
+
+  registry-authoring-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: Install Registry authoring dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+
+      - name: Compile Registry authoring Validator
+        run: |
+          PYTHONPYCACHEPREFIX=/tmp/congtie-registry-pycache python -m py_compile \
+            agent/knowledge_seed_v0/scripts/validate_biomarker_measurement_registry.py
+
+      - name: Validate Registry Schema definition
+        run: |
+          python agent/knowledge_seed_v0/scripts/validate_biomarker_measurement_registry.py \
+            --schema schemas/biomarker_measurement_registry_schema_v0.1.json
+
+      - name: Run Registry semantic and Schema-backed self-test
+        run: |
+          python agent/knowledge_seed_v0/scripts/validate_biomarker_measurement_registry.py \
+            --schema schemas/biomarker_measurement_registry_schema_v0.1.json \
+            --self-test
+
+      - name: Validate Registry Seed 001 ledgers
+        run: |
+          python agent/knowledge_seed_v0/scripts/validate_biomarker_measurement_registry.py \
+            --candidate-ledger agent/knowledge_seed_v0/registry_seed_001_candidate_ledger.v0.1.json \
+            --migration-ledger agent/knowledge_seed_v0/registry_seed_001_migration_ledger.v0.1.json
