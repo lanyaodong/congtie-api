@@ -1,0 +1,285 @@
+{
+  "document_metadata": {
+    "title": "Registry First Wave Pilot A Numeric-ID Allocation 2026-08-23 v0.1",
+    "version": "v0.1",
+    "status": "Draft / Founder Review Pending / Proposed Reservations Not Effective Until Controlled Commit",
+    "prepared_date": "2026-08-23",
+    "repository_anchor": "9fdd4a16b8430e3553ff53d08a55ab4c05edea47",
+    "canonical_record_directory": "agent/biomarker_measurement_registry/records",
+    "filename_pattern": "<REGISTRY_ID>.<candidate_key>.json",
+    "source_manifest_path": "agent/knowledge_seed_v0/registry_first_wave_pilot_a_proposed_record_authoring_manifest.v0.1.md",
+    "source_manifest_sha256": "951b98de45dbf3de2085041d1e729a2319808858632c97121bd08ab27ce1c757",
+    "candidate_ledger_path": "agent/knowledge_seed_v0/registry_seed_001_candidate_ledger.v0.1.json",
+    "candidate_ledger_sha256": "b97f4b0e0aeaa4fae6e728c561e88019d3c9e0b34ce353c1cc2b27f5cd09bbe5",
+    "id_policy": "Option B: namespace-level monotonic, non-semantic allocation",
+    "allocation_effective_condition": "Founder approval of this exact SHA plus controlled Git commit",
+    "proposed_id_count": 4,
+    "effective_reserved_id_count": 0,
+    "record_files_created": 0,
+    "candidate_ledger_modified": false
+  },
+  "scan_summary": {
+    "scan_date": "2026-08-23",
+    "scan_paths": [
+      "agent/knowledge_seed_v0/registry_seed_001_candidate_ledger.v0.1.json",
+      "agent/biomarker_measurement_registry/records",
+      "agent/biomarker_measurement_registry/id_allocations",
+      "agent/knowledge_seed_v0",
+      "schemas/biomarker_measurement_registry_schema_v0.1.json"
+    ],
+    "formal_occupied_ids": {
+      "BM": [],
+      "ME": [],
+      "SC": [],
+      "QS": []
+    },
+    "prior_effective_reserved_ids": {
+      "BM": [],
+      "ME": [],
+      "SC": [],
+      "QS": []
+    },
+    "collision_reserved_legacy_coordinates": {
+      "BM": {
+        "count": 22,
+        "minimum_number": 1,
+        "maximum_number": 22,
+        "coordinates": [
+          "BM-000001",
+          "BM-000002",
+          "BM-000003",
+          "BM-000004",
+          "BM-000005",
+          "BM-000006",
+          "BM-000007",
+          "BM-000008",
+          "BM-000009",
+          "BM-000010",
+          "BM-000011",
+          "BM-000012",
+          "BM-000013",
+          "BM-000014",
+          "BM-000015",
+          "BM-000016",
+          "BM-000017",
+          "BM-000018",
+          "BM-000019",
+          "BM-000020",
+          "BM-000021",
+          "BM-000022"
+        ]
+      },
+      "ME": {
+        "count": 17,
+        "minimum_number": 1,
+        "maximum_number": 17,
+        "coordinates": [
+          "ME-000001",
+          "ME-000002",
+          "ME-000003",
+          "ME-000004",
+          "ME-000005",
+          "ME-000006",
+          "ME-000007",
+          "ME-000008",
+          "ME-000009",
+          "ME-000010",
+          "ME-000011",
+          "ME-000012",
+          "ME-000013",
+          "ME-000014",
+          "ME-000015",
+          "ME-000016",
+          "ME-000017"
+        ]
+      },
+      "SC": {
+        "count": 3,
+        "minimum_number": 1,
+        "maximum_number": 3,
+        "coordinates": [
+          "SC-000001",
+          "SC-000002",
+          "SC-000003"
+        ]
+      },
+      "QS": {
+        "count": 0,
+        "minimum_number": 0,
+        "maximum_number": 0,
+        "coordinates": []
+      },
+      "source_path": "agent/knowledge_seed_v0/registry_seed_001_candidate_ledger.v0.1.json",
+      "source_sha256": "b97f4b0e0aeaa4fae6e728c561e88019d3c9e0b34ce353c1cc2b27f5cd09bbe5",
+      "authority_note": "These strings are collision-reserved only; they are not formal Registry IDs or effective reservations."
+    },
+    "ignored_examples_and_self_tests": {
+      "unique_id_like_strings": 49,
+      "by_namespace": {
+        "BM": 22,
+        "ME": 18,
+        "SC": 8,
+        "QS": 1
+      },
+      "validator_fixture_ids": [
+        "BM-000001",
+        "ME-000001",
+        "SC-000001"
+      ],
+      "categories": [
+        "Validator in-memory self-test IDs",
+        "planning placeholder IDs",
+        "documentation examples",
+        "temporary fixture IDs",
+        "code comments and historical prose"
+      ],
+      "classification_note": "Ignored occurrences do not occupy or reserve IDs. Literal strings can also appear in the collision-reserved set when the Candidate Ledger separately declares the same string as legacy_review_coordinate; classification is occurrence-role based."
+    },
+    "unresolved_collisions": 0,
+    "duplicate_formal_allocations": 0,
+    "candidate_ledger_registry_id_non_null_count": 0
+  },
+  "namespace_state": {
+    "BM": {
+      "formal_occupied_max": null,
+      "prior_effective_reserved_max": null,
+      "legacy_collision_reserved_max": 22,
+      "next_allocatable_number": 23,
+      "allocated_count": 1
+    },
+    "ME": {
+      "formal_occupied_max": null,
+      "prior_effective_reserved_max": null,
+      "legacy_collision_reserved_max": 17,
+      "next_allocatable_number": 18,
+      "allocated_count": 3
+    },
+    "SC": {
+      "formal_occupied_max": null,
+      "prior_effective_reserved_max": null,
+      "legacy_collision_reserved_max": 3,
+      "next_allocatable_number": 4,
+      "allocated_count": 0
+    },
+    "QS": {
+      "formal_occupied_max": null,
+      "prior_effective_reserved_max": null,
+      "legacy_collision_reserved_max": 0,
+      "next_allocatable_number": 1,
+      "allocated_count": 0
+    }
+  },
+  "allocations": [
+    {
+      "candidate_key": "height",
+      "namespace": "ME",
+      "reserved_registry_id": "ME-000018",
+      "allocation_status": "proposed_reservation_pending_founder_review",
+      "allocation_date": "2026-08-23",
+      "source_manifest_sha256": "951b98de45dbf3de2085041d1e729a2319808858632c97121bd08ab27ce1c757",
+      "intended_record_path": "agent/biomarker_measurement_registry/records/ME-000018.height.json",
+      "intended_lifecycle_status": "proposed",
+      "non_semantic": true,
+      "reusable": false,
+      "effective_reservation": false,
+      "effective_condition": "Founder approval of exact allocation-manifest SHA plus controlled Git commit",
+      "allocation_order_within_namespace": 1,
+      "collision_check": "pass",
+      "collision_check_details": {
+        "not_formal_occupied": true,
+        "not_prior_effective_reserved": true,
+        "not_legacy_coordinate": true,
+        "unique_within_manifest": true,
+        "namespace_prefix_matches": true,
+        "monotonic_sequence_matches": true,
+        "intended_path_unique": true
+      },
+      "note": "Proposed only; not effective until the exact allocation-manifest SHA is Founder-approved and committed through a controlled Git task."
+    },
+    {
+      "candidate_key": "body_weight",
+      "namespace": "ME",
+      "reserved_registry_id": "ME-000019",
+      "allocation_status": "proposed_reservation_pending_founder_review",
+      "allocation_date": "2026-08-23",
+      "source_manifest_sha256": "951b98de45dbf3de2085041d1e729a2319808858632c97121bd08ab27ce1c757",
+      "intended_record_path": "agent/biomarker_measurement_registry/records/ME-000019.body_weight.json",
+      "intended_lifecycle_status": "proposed",
+      "non_semantic": true,
+      "reusable": false,
+      "effective_reservation": false,
+      "effective_condition": "Founder approval of exact allocation-manifest SHA plus controlled Git commit",
+      "allocation_order_within_namespace": 2,
+      "collision_check": "pass",
+      "collision_check_details": {
+        "not_formal_occupied": true,
+        "not_prior_effective_reserved": true,
+        "not_legacy_coordinate": true,
+        "unique_within_manifest": true,
+        "namespace_prefix_matches": true,
+        "monotonic_sequence_matches": true,
+        "intended_path_unique": true
+      },
+      "note": "Proposed only; not effective until the exact allocation-manifest SHA is Founder-approved and committed through a controlled Git task."
+    },
+    {
+      "candidate_key": "creatinine",
+      "namespace": "BM",
+      "reserved_registry_id": "BM-000023",
+      "allocation_status": "proposed_reservation_pending_founder_review",
+      "allocation_date": "2026-08-23",
+      "source_manifest_sha256": "951b98de45dbf3de2085041d1e729a2319808858632c97121bd08ab27ce1c757",
+      "intended_record_path": "agent/biomarker_measurement_registry/records/BM-000023.creatinine.json",
+      "intended_lifecycle_status": "proposed",
+      "non_semantic": true,
+      "reusable": false,
+      "effective_reservation": false,
+      "effective_condition": "Founder approval of exact allocation-manifest SHA plus controlled Git commit",
+      "allocation_order_within_namespace": 1,
+      "collision_check": "pass",
+      "collision_check_details": {
+        "not_formal_occupied": true,
+        "not_prior_effective_reserved": true,
+        "not_legacy_coordinate": true,
+        "unique_within_manifest": true,
+        "namespace_prefix_matches": true,
+        "monotonic_sequence_matches": true,
+        "intended_path_unique": true
+      },
+      "note": "Proposed only; not effective until the exact allocation-manifest SHA is Founder-approved and committed through a controlled Git task."
+    },
+    {
+      "candidate_key": "heart_rate",
+      "namespace": "ME",
+      "reserved_registry_id": "ME-000020",
+      "allocation_status": "proposed_reservation_pending_founder_review",
+      "allocation_date": "2026-08-23",
+      "source_manifest_sha256": "951b98de45dbf3de2085041d1e729a2319808858632c97121bd08ab27ce1c757",
+      "intended_record_path": "agent/biomarker_measurement_registry/records/ME-000020.heart_rate.json",
+      "intended_lifecycle_status": "proposed",
+      "non_semantic": true,
+      "reusable": false,
+      "effective_reservation": false,
+      "effective_condition": "Founder approval of exact allocation-manifest SHA plus controlled Git commit",
+      "allocation_order_within_namespace": 3,
+      "collision_check": "pass",
+      "collision_check_details": {
+        "not_formal_occupied": true,
+        "not_prior_effective_reserved": true,
+        "not_legacy_coordinate": true,
+        "unique_within_manifest": true,
+        "namespace_prefix_matches": true,
+        "monotonic_sequence_matches": true,
+        "intended_path_unique": true
+      },
+      "note": "Proposed only; not effective until the exact allocation-manifest SHA is Founder-approved and committed through a controlled Git task."
+    }
+  ],
+  "non_authorizations": [
+    "No proposed reservation is effective before Founder approval of this exact SHA and a controlled Git commit.",
+    "No Registry or MeasurementProfile record file is created or authorized.",
+    "No Candidate Ledger field or candidate order is modified.",
+    "No lifecycle above proposed is authorized.",
+    "No runtime, retrieval, database, API, loader, index, Observation processing, user-health storage, Service Panel, publication, personal target, diagnosis, treatment, or automatic action is authorized."
+  ]
+}
