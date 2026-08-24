@@ -164,6 +164,31 @@
       "access_date": "2026-08-22",
       "verification_status": "content_verified",
       "note": "Unit syntax authority only."
+    },
+    {
+      "source_key": "src-niddk-creatinine-conversion",
+      "title": "eGFR Equations for Adults",
+      "organization_or_journal": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "serum creatinine unit conversion using factor 88.4 between umol/L and mg/dL",
+        "standardized serum creatinine input context for adult eGFR equations"
+      ],
+      "does_not_support": [
+        "assay or platform equivalence",
+        "reference interval",
+        "diagnosis",
+        "personal target or action"
+      ],
+      "url": "https://www.niddk.nih.gov/research-funding/research-programs/kidney-clinical-research-epidemiology/laboratory/glomerular-filtration-rate-equations/adults",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-24",
+      "verification_status": "content_verified",
+      "note": "Official unit-conversion authority; page last reviewed May 2025."
     }
   ],
   "definition_source_keys": [
@@ -263,7 +288,8 @@
       "source_reference_keys": [
         "src-nist-creat",
         "src-creat-method-2020",
-        "src-wst4045"
+        "src-wst4045",
+        "src-niddk-creatinine-conversion"
       ],
       "derived_computation": null
     }
@@ -314,10 +340,10 @@
   ],
   "governance_metadata": {
     "created_date": "2026-08-23",
-    "last_modified_date": "2026-08-23",
+    "last_modified_date": "2026-08-24",
     "reviewed_by": [],
     "reviewed_date": null,
-    "last_source_check_date": "2026-08-22",
+    "last_source_check_date": "2026-08-24",
     "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
   }
 }
