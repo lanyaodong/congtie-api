@@ -2,7 +2,7 @@
   "candidate_key": "body_weight",
   "registry_id": "ME-000019",
   "namespace": "ME",
-  "lifecycle_status": "proposed",
+  "lifecycle_status": "source_verified",
   "version": "v0.1",
   "canonical_name_zh": "体重",
   "canonical_name_en": "Body Weight",
@@ -52,7 +52,7 @@
       "url": "https://loinc.org/29463-7",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Terminology and code authority."
     },
@@ -76,7 +76,7 @@
       "url": "https://www.who.int/teams/noncommunicable-diseases/surveillance/systems-tools/steps/manuals",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "International method source."
     },
@@ -98,7 +98,7 @@
       "url": "https://www.nhc.gov.cn/wjw/yingyang/201308/1f27caef0b22493e93a1da8aec2cd63a.shtml",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "China method source."
     },
@@ -121,7 +121,7 @@
       "url": "https://ucum.org/ucum",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Unit syntax authority only."
     }
@@ -132,7 +132,7 @@
   "profiles": [
     {
       "profile_key": "body_weight.scale_measured",
-      "profile_status": "proposed",
+      "profile_status": "source_verified",
       "measurement_nature": "measured",
       "source_modality": "clinical_device",
       "specimen_type": null,
@@ -259,10 +259,10 @@
   ],
   "governance_metadata": {
     "created_date": "2026-08-23",
-    "last_modified_date": "2026-08-23",
+    "last_modified_date": "2026-08-24",
     "reviewed_by": [],
     "reviewed_date": null,
-    "last_source_check_date": "2026-08-22",
-    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+    "last_source_check_date": "2026-08-24",
+    "status_note": "Source verification completed for the canonical Body Weight definition and body_weight.scale_measured Profile. RegistryConcept and Profile are source_verified only; no human review, active status, publication, runtime, retrieval, clinical claim, threshold or action authorization."
   }
 }
