@@ -2,7 +2,7 @@
   "candidate_key": "creatinine",
   "registry_id": "BM-000023",
   "namespace": "BM",
-  "lifecycle_status": "proposed",
+  "lifecycle_status": "source_verified",
   "version": "v0.1",
   "canonical_name_zh": "肌酐",
   "canonical_name_en": "Creatinine",
@@ -48,7 +48,7 @@
       "url": "https://loinc.org/2160-0",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Property representation."
     },
@@ -70,7 +70,7 @@
       "url": "https://loinc.org/14682-9",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Property representation."
     },
@@ -93,7 +93,7 @@
       "url": "https://www.nist.gov/programs-projects/development-reference-measurement-procedures-and-reference-materials-creatinine",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Traceability source."
     },
@@ -116,7 +116,7 @@
       "url": null,
       "doi": "10.1093/jalm/jfaa053",
       "pmid": "32447368",
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "No unverified author/date added."
     },
@@ -138,7 +138,7 @@
       "url": "https://www.nhc.gov.cn/ewebeditor/uploadfile/2015/05/20150504152412571.pdf",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "No numeric ReferenceContext initially."
     },
@@ -161,7 +161,7 @@
       "url": "https://ucum.org/ucum",
       "doi": null,
       "pmid": null,
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-24",
       "verification_status": "content_verified",
       "note": "Unit syntax authority only."
     },
@@ -198,7 +198,7 @@
   "profiles": [
     {
       "profile_key": "creatinine.serum_or_plasma.enzymatic",
-      "profile_status": "proposed",
+      "profile_status": "source_verified",
       "measurement_nature": "measured",
       "source_modality": "laboratory",
       "specimen_type": "serum_or_plasma",
@@ -344,6 +344,6 @@
     "reviewed_by": [],
     "reviewed_date": null,
     "last_source_check_date": "2026-08-24",
-    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+    "status_note": "Source verification completed for the canonical Creatinine definition and creatinine.serum_or_plasma.enzymatic Profile after exact unit-conversion authority was added. RegistryConcept and Profile are source_verified only; no assay equivalence, human review, active status, publication, runtime, retrieval, clinical claim, threshold or action authorization."
   }
 }
