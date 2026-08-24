@@ -1,0 +1,268 @@
+{
+  "candidate_key": "body_weight",
+  "registry_id": "ME-000019",
+  "namespace": "ME",
+  "lifecycle_status": "proposed",
+  "version": "v0.1",
+  "canonical_name_zh": "体重",
+  "canonical_name_en": "Body Weight",
+  "abbreviation": null,
+  "aliases": [
+    "weight"
+  ],
+  "legacy_codes": [],
+  "information_type": "physiological_measurement",
+  "measurement_domain": "anthropometry",
+  "construct_type": "anthropometric_measurement",
+  "construct_definition": "Human body weight measured with a scale under recorded protocol and device context.",
+  "allowed_measurement_natures": [
+    "measured"
+  ],
+  "value_type": "number",
+  "unit_policy": {
+    "mode": "single_canonical",
+    "canonical_unit": {
+      "unit_code": "kg",
+      "unit_system": "UCUM",
+      "status": "canonical",
+      "conversion_rule": null,
+      "conversion_verified": false,
+      "note": "Canonical representation."
+    },
+    "note": "Conversion does not establish scale/protocol equivalence."
+  },
+  "source_references": [
+    {
+      "source_key": "src-loinc-weight",
+      "title": "LOINC 29463-7, Body weight",
+      "organization_or_journal": "Regenstrief / LOINC",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "Body weight terminology",
+        "LOINC mapping"
+      ],
+      "does_not_support": [
+        "body composition",
+        "change attribution",
+        "self-report equivalence"
+      ],
+      "url": "https://loinc.org/29463-7",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Terminology and code authority."
+    },
+    {
+      "source_key": "src-who-steps",
+      "title": "WHO STEPwise Approach to NCD Risk Factor Surveillance manuals",
+      "organization_or_journal": "World Health Organization",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "measurement_method",
+      "supports": [
+        "standing-height protocol",
+        "measured-weight protocol"
+      ],
+      "does_not_support": [
+        "every device",
+        "self-report equivalence",
+        "personal targets"
+      ],
+      "url": "https://www.who.int/teams/noncommunicable-diseases/surveillance/systems-tools/steps/manuals",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "International method source."
+    },
+    {
+      "source_key": "src-wst424",
+      "title": "WS/T 424-2013, Anthropometric methods in population health monitoring",
+      "organization_or_journal": "National Health Commission of China",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "measurement_method",
+      "supports": [
+        "China height/weight protocols"
+      ],
+      "does_not_support": [
+        "global thresholds",
+        "self-report equivalence"
+      ],
+      "url": "https://www.nhc.gov.cn/wjw/yingyang/201308/1f27caef0b22493e93a1da8aec2cd63a.shtml",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "China method source."
+    },
+    {
+      "source_key": "src-ucum",
+      "title": "UCUM Specification",
+      "organization_or_journal": "Regenstrief Institute",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "UCUM unit syntax"
+      ],
+      "does_not_support": [
+        "method equivalence",
+        "clinical interpretation",
+        "personal targets"
+      ],
+      "url": "https://ucum.org/ucum",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Unit syntax authority only."
+    }
+  ],
+  "definition_source_keys": [
+    "src-loinc-weight"
+  ],
+  "profiles": [
+    {
+      "profile_key": "body_weight.scale_measured",
+      "profile_status": "proposed",
+      "measurement_nature": "measured",
+      "source_modality": "clinical_device",
+      "specimen_type": null,
+      "matrix": null,
+      "body_site": null,
+      "collection_or_protocol_context": {
+        "protocol_name": "calibrated scale body-weight measurement",
+        "protocol_version": null,
+        "measurement_window": "single measurement event",
+        "timing_context": null,
+        "fasting_status": "unknown",
+        "fasting_duration_hours": null,
+        "posture": "standing",
+        "rest_duration_minutes": null,
+        "body_site": null,
+        "laterality": "not_applicable",
+        "repetition_count": null,
+        "pace_or_effort_instruction": null,
+        "context_tags": [
+          "clothing_recorded",
+          "footwear_recorded",
+          "time_of_day_recorded",
+          "scale_recorded"
+        ],
+        "note": "never assume fasting/post-void"
+      },
+      "method": "body weight measured with a calibrated scale",
+      "instrument_or_device": "weighing scale",
+      "vendor_or_model": null,
+      "algorithm_version": null,
+      "accepted_units": [
+        {
+          "unit_code": "kg",
+          "unit_system": "UCUM",
+          "status": "canonical",
+          "conversion_rule": null,
+          "conversion_verified": false,
+          "note": "Canonical."
+        },
+        {
+          "unit_code": "[lb_av]",
+          "unit_system": "UCUM",
+          "status": "accepted",
+          "conversion_rule": "value_[lb_av] * 0.45359237 = value_kg",
+          "conversion_verified": true,
+          "note": "Exact avoirdupois conversion."
+        }
+      ],
+      "canonicalization_rule": "Retain original value/unit; convert [lb_av] only by weight_units rule.",
+      "method_comparability_status": "context_dependent",
+      "trend_breakpoint_note": "Scale, calibration, clothing, or protocol change may break trends.",
+      "cross_platform_comparison_prohibited": false,
+      "reference_contexts": [],
+      "external_mappings": [],
+      "device_mappings": [],
+      "profile_limitations": [
+        "Scale and protocol context matter.",
+        "Fasting/post-void never assumed.",
+        "Body composition and self-report excluded."
+      ],
+      "source_reference_keys": [
+        "src-who-steps",
+        "src-wst424"
+      ],
+      "derived_computation": null
+    }
+  ],
+  "use_evidence_claims": [],
+  "system_relations": [],
+  "external_mappings": [
+    {
+      "mapping_key": "loinc.body_weight",
+      "mapping_scope": "concept",
+      "system": "LOINC",
+      "code": "29463-7",
+      "version": null,
+      "status": "mapped",
+      "confidence": "high",
+      "source_reference_keys": [
+        "src-loinc-weight"
+      ],
+      "note": "Protocol provenance remains in the Profile."
+    }
+  ],
+  "interpretation_limitations": [
+    "Body weight is not body composition.",
+    "Short-term change does not identify cause.",
+    "Scale/calibration/protocol changes may break trends."
+  ],
+  "agent_permissions": {
+    "permitted_uses": [
+      "explain construct/protocol",
+      "explain units",
+      "explain breakpoints",
+      "explain BMI lineage",
+      "request missing context"
+    ],
+    "prohibited_uses": [
+      "infer composition",
+      "assign change cause",
+      "equate self-report",
+      "diagnose/prescribe",
+      "generate personal target",
+      "authorize action"
+    ],
+    "action_authorization": "none",
+    "authorization_note": "Explanation and context completion only; no diagnosis, prescription, personal target, or action."
+  },
+  "personalized_target_support": {
+    "support_status": "requires_governance",
+    "prerequisites": [
+      "authorized user context",
+      "claim-specific evidence",
+      "safety rules",
+      "permission",
+      "Personalized Longevity Protocol governance"
+    ],
+    "boundary_note": "Public Registry records contain no user-specific target value, target rationale, effective period or action linkage."
+  },
+  "lifecycle_relations": [],
+  "governance_notes": [
+    "Initial profile is calibrated-scale measurement.",
+    "Household-scale-specific and self-reported profiles are deferred."
+  ],
+  "governance_metadata": {
+    "created_date": "2026-08-23",
+    "last_modified_date": "2026-08-23",
+    "reviewed_by": [],
+    "reviewed_date": null,
+    "last_source_check_date": "2026-08-22",
+    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+  }
+}

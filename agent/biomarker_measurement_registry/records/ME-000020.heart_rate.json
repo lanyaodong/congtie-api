@@ -1,0 +1,322 @@
+{
+  "candidate_key": "heart_rate",
+  "registry_id": "ME-000020",
+  "namespace": "ME",
+  "lifecycle_status": "proposed",
+  "version": "v0.1",
+  "canonical_name_zh": "心率",
+  "canonical_name_en": "Heart Rate",
+  "abbreviation": "HR",
+  "aliases": [],
+  "legacy_codes": [],
+  "information_type": "physiological_measurement",
+  "measurement_domain": "cardiovascular_physiology",
+  "construct_type": "physiological_measurement",
+  "construct_definition": "Rate of cardiac cycles under an explicit measurement modality and time window.",
+  "allowed_measurement_natures": [
+    "measured",
+    "estimated"
+  ],
+  "value_type": "number",
+  "unit_policy": {
+    "mode": "single_canonical",
+    "canonical_unit": {
+      "unit_code": "/min",
+      "unit_system": "UCUM",
+      "status": "canonical",
+      "conversion_rule": null,
+      "conversion_verified": false,
+      "note": "Canonical representation."
+    },
+    "note": "bpm is a UI label for /min, not another unit."
+  },
+  "source_references": [
+    {
+      "source_key": "src-loinc-hr",
+      "title": "LOINC 8867-4, Heart rate",
+      "organization_or_journal": "Regenstrief / LOINC",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "Heart rate terminology/mapping"
+      ],
+      "does_not_support": [
+        "spot method",
+        "PPG-ECG equivalence",
+        "rhythm diagnosis"
+      ],
+      "url": "https://loinc.org/8867-4",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Terminology and code authority."
+    },
+    {
+      "source_key": "src-hr-ppg-2020",
+      "title": "Validity of wrist-worn photoplethysmography devices to measure heart rate",
+      "organization_or_journal": "Journal of Sports Sciences",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "validation_evidence",
+      "supports": [
+        "PPG limitations",
+        "activity dependence"
+      ],
+      "does_not_support": [
+        "ECG equivalence",
+        "all devices",
+        "rhythm diagnosis"
+      ],
+      "url": null,
+      "doi": "10.1080/02640414.2020.1767348",
+      "pmid": "32552580",
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Wearable validation."
+    },
+    {
+      "source_key": "src-interlive-hr",
+      "title": "Recommendations for determining the validity of consumer wearable heart rate devices",
+      "organization_or_journal": "INTERLIVE Network / British Journal of Sports Medicine",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "validation_evidence",
+      "supports": [
+        "wearable validation framework"
+      ],
+      "does_not_support": [
+        "device/firmware/algorithm equivalence",
+        "diagnosis"
+      ],
+      "url": null,
+      "doi": null,
+      "pmid": "33397674",
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Validation framework."
+    },
+    {
+      "source_key": "src-ucum",
+      "title": "UCUM Specification",
+      "organization_or_journal": "Regenstrief Institute",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "UCUM unit syntax"
+      ],
+      "does_not_support": [
+        "method equivalence",
+        "clinical interpretation",
+        "personal targets"
+      ],
+      "url": "https://ucum.org/ucum",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Unit syntax authority only."
+    }
+  ],
+  "definition_source_keys": [
+    "src-loinc-hr"
+  ],
+  "profiles": [
+    {
+      "profile_key": "heart_rate.spot_clinical",
+      "profile_status": "proposed",
+      "measurement_nature": "measured",
+      "source_modality": "clinical_device",
+      "specimen_type": null,
+      "matrix": null,
+      "body_site": null,
+      "collection_or_protocol_context": {
+        "protocol_name": "device-based spot heart-rate measurement",
+        "protocol_version": null,
+        "measurement_window": "spot",
+        "timing_context": null,
+        "fasting_status": "not_applicable",
+        "fasting_duration_hours": null,
+        "posture": null,
+        "rest_duration_minutes": null,
+        "body_site": null,
+        "laterality": "not_applicable",
+        "repetition_count": null,
+        "pace_or_effort_instruction": null,
+        "context_tags": [
+          "posture_required_at_observation",
+          "rest_required_at_observation",
+          "device_method_required_at_observation",
+          "measurement_window_required_at_observation"
+        ],
+        "note": "Observation supplies posture/rest/device/window"
+      },
+      "method": "device-based spot heart-rate measurement",
+      "instrument_or_device": "clinical heart-rate device",
+      "vendor_or_model": null,
+      "algorithm_version": null,
+      "accepted_units": [
+        {
+          "unit_code": "/min",
+          "unit_system": "UCUM",
+          "status": "canonical",
+          "conversion_rule": null,
+          "conversion_verified": false,
+          "note": "Canonical for both profiles."
+        }
+      ],
+      "canonicalization_rule": "Retain original value and /min; bpm is display text only.",
+      "method_comparability_status": "context_dependent",
+      "trend_breakpoint_note": "Device, method, posture, rest, or window change may break trends.",
+      "cross_platform_comparison_prohibited": true,
+      "reference_contexts": [],
+      "external_mappings": [],
+      "device_mappings": [],
+      "profile_limitations": [
+        "Observation records posture/rest/device/window.",
+        "Spot and summary values are not interchangeable.",
+        "Manual pulse count excluded."
+      ],
+      "source_reference_keys": [],
+      "derived_computation": null
+    },
+    {
+      "profile_key": "heart_rate.wearable_ppg_time_series_estimate",
+      "profile_status": "proposed",
+      "measurement_nature": "estimated",
+      "source_modality": "wearable",
+      "specimen_type": null,
+      "matrix": null,
+      "body_site": null,
+      "collection_or_protocol_context": {
+        "protocol_name": "wearable PPG heart-rate time series",
+        "protocol_version": null,
+        "measurement_window": "time_series",
+        "timing_context": null,
+        "fasting_status": "not_applicable",
+        "fasting_duration_hours": null,
+        "posture": null,
+        "rest_duration_minutes": null,
+        "body_site": null,
+        "laterality": "not_applicable",
+        "repetition_count": null,
+        "pace_or_effort_instruction": null,
+        "context_tags": [
+          "device_required",
+          "firmware_required_if_available",
+          "algorithm_version_required_if_available",
+          "aggregation_window_required",
+          "activity_context_required",
+          "artifact_handling_required_if_available"
+        ],
+        "note": "Observation supplies device/firmware/algorithm/aggregation/activity/artifact context"
+      },
+      "method": "PPG-derived heart-rate estimate",
+      "instrument_or_device": "wearable PPG device",
+      "vendor_or_model": null,
+      "algorithm_version": null,
+      "accepted_units": [
+        {
+          "unit_code": "/min",
+          "unit_system": "UCUM",
+          "status": "canonical",
+          "conversion_rule": null,
+          "conversion_verified": false,
+          "note": "Canonical for both profiles."
+        }
+      ],
+      "canonicalization_rule": "Retain device provenance/window and /min; never silently normalize platforms or contexts.",
+      "method_comparability_status": "not_comparable",
+      "trend_breakpoint_note": "Device, firmware, algorithm, wear, sampling, aggregation, or artifact change is a breakpoint unless validated.",
+      "cross_platform_comparison_prohibited": true,
+      "reference_contexts": [],
+      "external_mappings": [],
+      "device_mappings": [],
+      "profile_limitations": [
+        "PPG estimate is not ECG.",
+        "Motion, wear, signal sampling, and artifact handling matter.",
+        "Cross-platform normalization prohibited without validation."
+      ],
+      "source_reference_keys": [
+        "src-hr-ppg-2020",
+        "src-interlive-hr"
+      ],
+      "derived_computation": null
+    }
+  ],
+  "use_evidence_claims": [],
+  "system_relations": [],
+  "external_mappings": [
+    {
+      "mapping_key": "loinc.heart_rate",
+      "mapping_scope": "concept",
+      "system": "LOINC",
+      "code": "8867-4",
+      "version": null,
+      "status": "mapped",
+      "confidence": "high",
+      "source_reference_keys": [
+        "src-loinc-hr"
+      ],
+      "note": "Modality and window remain in the Profile."
+    }
+  ],
+  "interpretation_limitations": [
+    "Modality window and context matter.",
+    "PPG is not ECG.",
+    "Spot and summaries are not interchangeable.",
+    "Device/algorithm changes may break trends.",
+    "No rhythm diagnosis."
+  ],
+  "agent_permissions": {
+    "permitted_uses": [
+      "explain construct/modality/window",
+      "explain unit/UI label",
+      "explain artifact/uncertainty/comparability",
+      "explain breakpoints",
+      "request missing context"
+    ],
+    "prohibited_uses": [
+      "diagnose arrhythmia",
+      "treat PPG as ECG",
+      "interchange spot and summaries",
+      "silently normalize platforms/contexts",
+      "dismiss symptoms",
+      "generate risk score/target",
+      "prescribe or auto-authorize action"
+    ],
+    "action_authorization": "separately_gated",
+    "authorization_note": "Modality-aware explanation only; diagnosis, symptom triage, personal targets, and actions require separate governance."
+  },
+  "personalized_target_support": {
+    "support_status": "requires_governance",
+    "prerequisites": [
+      "authorized user context",
+      "claim-specific evidence",
+      "safety rules",
+      "permission",
+      "Personalized Longevity Protocol governance"
+    ],
+    "boundary_note": "Public Registry records contain no user-specific target value, target rationale, effective period or action linkage."
+  },
+  "lifecycle_relations": [],
+  "governance_notes": [
+    "Initial profiles are spot device and wearable PPG estimate.",
+    "Manual pulse and summary/zone/recovery profiles are deferred.",
+    "SRC-NHC-LITERACY-2024 is excluded."
+  ],
+  "governance_metadata": {
+    "created_date": "2026-08-23",
+    "last_modified_date": "2026-08-23",
+    "reviewed_by": [],
+    "reviewed_date": null,
+    "last_source_check_date": "2026-08-22",
+    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+  }
+}

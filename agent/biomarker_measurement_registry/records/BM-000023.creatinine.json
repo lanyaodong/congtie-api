@@ -1,0 +1,323 @@
+{
+  "candidate_key": "creatinine",
+  "registry_id": "BM-000023",
+  "namespace": "BM",
+  "lifecycle_status": "proposed",
+  "version": "v0.1",
+  "canonical_name_zh": "肌酐",
+  "canonical_name_en": "Creatinine",
+  "abbreviation": "Cr",
+  "aliases": [],
+  "legacy_codes": [],
+  "information_type": "laboratory_biomarker",
+  "measurement_domain": "laboratory_chemistry",
+  "construct_type": "analyte",
+  "construct_definition": "Creatinine concentration in serum or plasma under a specified analytical method.",
+  "allowed_measurement_natures": [
+    "measured"
+  ],
+  "value_type": "number",
+  "unit_policy": {
+    "mode": "single_canonical",
+    "canonical_unit": {
+      "unit_code": "umol/L",
+      "unit_system": "UCUM",
+      "status": "canonical",
+      "conversion_rule": null,
+      "conversion_verified": false,
+      "note": "Canonical representation."
+    },
+    "note": "Conversion does not establish assay/platform comparability."
+  },
+  "source_references": [
+    {
+      "source_key": "src-loinc-creat-mass",
+      "title": "LOINC 2160-0, Creatinine [Mass/volume] in Serum or Plasma",
+      "organization_or_journal": "Regenstrief / LOINC",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "mass-concentration terminology/mapping"
+      ],
+      "does_not_support": [
+        "enzymatic identity",
+        "kidney-function equivalence"
+      ],
+      "url": "https://loinc.org/2160-0",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Property representation."
+    },
+    {
+      "source_key": "src-loinc-creat-molar",
+      "title": "LOINC 14682-9, Creatinine [Moles/volume] in Serum or Plasma",
+      "organization_or_journal": "Regenstrief / LOINC",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "molar-concentration terminology/mapping"
+      ],
+      "does_not_support": [
+        "enzymatic identity",
+        "kidney-function equivalence"
+      ],
+      "url": "https://loinc.org/14682-9",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Property representation."
+    },
+    {
+      "source_key": "src-nist-creat",
+      "title": "Development of Reference Measurement Procedures and Reference Materials for Creatinine",
+      "organization_or_journal": "NIST",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "measurement_method",
+      "supports": [
+        "reference measurement",
+        "IDMS traceability"
+      ],
+      "does_not_support": [
+        "every-assay equivalence",
+        "diagnosis"
+      ],
+      "url": "https://www.nist.gov/programs-projects/development-reference-measurement-procedures-and-reference-materials-creatinine",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Traceability source."
+    },
+    {
+      "source_key": "src-creat-method-2020",
+      "title": "Clinical and Analytical Impact of Moving from Jaffe to Enzymatic Serum Creatinine Methodology",
+      "organization_or_journal": "Journal of Applied Laboratory Medicine",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "validation_evidence",
+      "supports": [
+        "method comparability",
+        "interference"
+      ],
+      "does_not_support": [
+        "universal continuity",
+        "diagnosis"
+      ],
+      "url": null,
+      "doi": "10.1093/jalm/jfaa053",
+      "pmid": "32447368",
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "No unverified author/date added."
+    },
+    {
+      "source_key": "src-wst4045",
+      "title": "WS/T 404.5-2015, Clinical common biochemical test reference intervals, Part 5: serum urea and creatinine",
+      "organization_or_journal": "National Health Commission of China",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "reference_interval_source",
+      "supports": [
+        "China interval/method context"
+      ],
+      "does_not_support": [
+        "universal interval",
+        "kidney-function equivalence"
+      ],
+      "url": "https://www.nhc.gov.cn/ewebeditor/uploadfile/2015/05/20150504152412571.pdf",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "No numeric ReferenceContext initially."
+    },
+    {
+      "source_key": "src-ucum",
+      "title": "UCUM Specification",
+      "organization_or_journal": "Regenstrief Institute",
+      "authors": [],
+      "publication_date": null,
+      "source_type": null,
+      "source_role": "other_reviewed_role",
+      "supports": [
+        "UCUM unit syntax"
+      ],
+      "does_not_support": [
+        "method equivalence",
+        "clinical interpretation",
+        "personal targets"
+      ],
+      "url": "https://ucum.org/ucum",
+      "doi": null,
+      "pmid": null,
+      "access_date": "2026-08-22",
+      "verification_status": "content_verified",
+      "note": "Unit syntax authority only."
+    }
+  ],
+  "definition_source_keys": [
+    "src-loinc-creat-mass",
+    "src-loinc-creat-molar"
+  ],
+  "profiles": [
+    {
+      "profile_key": "creatinine.serum_or_plasma.enzymatic",
+      "profile_status": "proposed",
+      "measurement_nature": "measured",
+      "source_modality": "laboratory",
+      "specimen_type": "serum_or_plasma",
+      "matrix": "serum_or_plasma",
+      "body_site": null,
+      "collection_or_protocol_context": {
+        "protocol_name": "serum or plasma enzymatic creatinine assay",
+        "protocol_version": null,
+        "measurement_window": "specimen collection event",
+        "timing_context": null,
+        "fasting_status": "unknown",
+        "fasting_duration_hours": null,
+        "posture": null,
+        "rest_duration_minutes": null,
+        "body_site": null,
+        "laterality": "not_applicable",
+        "repetition_count": null,
+        "pace_or_effort_instruction": null,
+        "context_tags": [
+          "specimen_recorded",
+          "assay_recorded",
+          "idms_traceability_recorded"
+        ],
+        "note": "preserve specimen/assay/platform/traceability"
+      },
+      "method": "enzymatic creatinine assay with recorded IDMS traceability status",
+      "instrument_or_device": null,
+      "vendor_or_model": null,
+      "algorithm_version": null,
+      "accepted_units": [
+        {
+          "unit_code": "umol/L",
+          "unit_system": "UCUM",
+          "status": "canonical",
+          "conversion_rule": null,
+          "conversion_verified": false,
+          "note": "Canonical."
+        },
+        {
+          "unit_code": "mg/dL",
+          "unit_system": "UCUM",
+          "status": "accepted",
+          "conversion_rule": "value_mg/dL * 88.4 = value_umol/L",
+          "conversion_verified": true,
+          "note": "Reviewed conversion; assay comparability remains separate."
+        }
+      ],
+      "canonicalization_rule": "Retain original value/unit; convert mg/dL only by creatinine_units rule without asserting assay equivalence.",
+      "method_comparability_status": "context_dependent",
+      "trend_breakpoint_note": "Laboratory, specimen, assay, calibration, platform, traceability, or method change may break trends.",
+      "cross_platform_comparison_prohibited": true,
+      "reference_contexts": [],
+      "external_mappings": [
+        {
+          "mapping_key": "loinc.creatinine.mass",
+          "mapping_scope": "profile",
+          "system": "LOINC",
+          "code": "2160-0",
+          "version": null,
+          "status": "mapped",
+          "confidence": "high",
+          "source_reference_keys": [
+            "src-loinc-creat-mass"
+          ],
+          "note": "Code defines mass representation; enzymatic provenance remains in the Profile."
+        },
+        {
+          "mapping_key": "loinc.creatinine.molar",
+          "mapping_scope": "profile",
+          "system": "LOINC",
+          "code": "14682-9",
+          "version": null,
+          "status": "mapped",
+          "confidence": "high",
+          "source_reference_keys": [
+            "src-loinc-creat-molar"
+          ],
+          "note": "Code defines molar representation; enzymatic provenance remains in the Profile."
+        }
+      ],
+      "device_mappings": [],
+      "profile_limitations": [
+        "Assays remain platform-dependent.",
+        "Interference and muscle/body context matter.",
+        "Unit conversion is not method comparability."
+      ],
+      "source_reference_keys": [
+        "src-nist-creat",
+        "src-creat-method-2020",
+        "src-wst4045"
+      ],
+      "derived_computation": null
+    }
+  ],
+  "use_evidence_claims": [],
+  "system_relations": [],
+  "external_mappings": [],
+  "interpretation_limitations": [
+    "Assay method interference and muscle/body context matter.",
+    "Creatinine is not kidney function.",
+    "Cross-method/platform continuity is not assumed."
+  ],
+  "agent_permissions": {
+    "permitted_uses": [
+      "explain construct/specimen/assay/traceability/units",
+      "explain conversion limits",
+      "explain report provenance/breakpoints",
+      "explain eGFR lineage",
+      "request missing context"
+    ],
+    "prohibited_uses": [
+      "equate with kidney function",
+      "diagnose kidney disease",
+      "normalize unreviewed methods",
+      "discard original report data",
+      "prescribe treatment",
+      "generate personal target",
+      "authorize action without gate"
+    ],
+    "action_authorization": "separately_gated",
+    "authorization_note": "Source-aware explanation only; diagnosis, treatment, personal targets, and actions require separate governance."
+  },
+  "personalized_target_support": {
+    "support_status": "requires_governance",
+    "prerequisites": [
+      "authorized user context",
+      "claim-specific evidence",
+      "safety rules",
+      "permission",
+      "Personalized Longevity Protocol governance"
+    ],
+    "boundary_note": "Public Registry records contain no user-specific target value, target rationale, effective period or action linkage."
+  },
+  "lifecycle_relations": [],
+  "governance_notes": [
+    "Initial profile is serum/plasma enzymatic creatinine with recorded IDMS status.",
+    "Jaffe is deferred."
+  ],
+  "governance_metadata": {
+    "created_date": "2026-08-23",
+    "last_modified_date": "2026-08-23",
+    "reviewed_by": [],
+    "reviewed_date": null,
+    "last_source_check_date": "2026-08-22",
+    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+  }
+}
