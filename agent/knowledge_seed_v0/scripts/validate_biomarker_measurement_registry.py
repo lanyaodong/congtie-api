@@ -45,6 +45,11 @@ NAMESPACE_MATRIX = {
 VERIFIED_SOURCE_STATUSES = {"metadata_verified", "content_verified"}
 REVIEWED_SOURCE_STATUSES = {"metadata_verified", "content_verified"}
 CONTENT_VERIFIED = {"content_verified"}
+PROFILE_SOURCE_GOVERNED_STATUSES = {
+    "source_verified",
+    "human_reviewed",
+    "active",
+}
 
 DEVICE_MAPPING_LAYER_KEYS = {
     "generic_sleep_score",
@@ -501,10 +506,6 @@ def _reviewed_source_sections(record: dict[str, Any]) -> list[tuple[str, list[st
     ]
     for p_index, value in enumerate(_as_list(record.get("profiles"))):
         profile = _as_dict(value)
-        if profile.get("profile_status") in {"human_reviewed", "active"}:
-            sections.append(
-                (f"profiles[{p_index}].source_reference_keys", _as_list(profile.get("source_reference_keys")))
-            )
         for r_index, ref in enumerate(_as_list(profile.get("reference_contexts"))):
             sections.append(
                 (
@@ -519,12 +520,37 @@ def _reviewed_source_sections(record: dict[str, Any]) -> list[tuple[str, list[st
     return sections
 
 
+def _check_profile_source_lifecycle(
+    profiles: list[dict[str, Any]],
+    source_map: dict[str, dict[str, Any]],
+    report: Report,
+) -> None:
+    for index, profile in enumerate(profiles):
+        status = profile.get("profile_status")
+        if status not in PROFILE_SOURCE_GOVERNED_STATUSES:
+            continue
+        path = f"profiles[{index}].source_reference_keys"
+        refs = _as_list(profile.get("source_reference_keys"))
+        if not refs:
+            report.error(
+                path,
+                f"profile_status={status!r} requires at least one source_reference_key",
+            )
+        allowed = (
+            VERIFIED_SOURCE_STATUSES
+            if status == "source_verified"
+            else REVIEWED_SOURCE_STATUSES
+        )
+        _check_source_statuses(refs, source_map, allowed, path, report)
+
+
 def _check_source_lifecycle(
     record: dict[str, Any], source_map: dict[str, dict[str, Any]], report: Report
 ) -> None:
     lifecycle = record.get("lifecycle_status")
     definition_keys = _as_list(record.get("definition_source_keys"))
     profiles = [_as_dict(item) for item in _as_list(record.get("profiles"))]
+    _check_profile_source_lifecycle(profiles, source_map, report)
     if lifecycle == "source_verified":
         _check_source_statuses(
             definition_keys, source_map, VERIFIED_SOURCE_STATUSES, "definition_source_keys", report
@@ -537,15 +563,6 @@ def _check_source_lifecycle(
                 "definition_source_keys",
                 "definition authority is metadata_verified only; content_verified is recommended",
             )
-        for index, profile in enumerate(profiles):
-            if profile.get("profile_status") in {"source_verified", "human_reviewed", "active"}:
-                _check_source_statuses(
-                    _as_list(profile.get("source_reference_keys")),
-                    source_map,
-                    VERIFIED_SOURCE_STATUSES,
-                    f"profiles[{index}]",
-                    report,
-                )
     if lifecycle in {"human_reviewed", "active"}:
         for path, keys in _reviewed_source_sections(record):
             _check_source_statuses(keys, source_map, REVIEWED_SOURCE_STATUSES, path, report)
@@ -1109,15 +1126,43 @@ def run_self_test(schema: dict[str, Any] | None) -> tuple[Report, bool, dict[str
         "sleep_total_time",
         "time_in_bed",
     }
+    valid_mixed_profile = _base_record("proposed")
+    valid_mixed_profile["source_references"] = [
+        _source("s.method", "measurement_method", "content_verified")
+    ]
+    valid_mixed_profile["profiles"] = [_profile("source_verified")]
     valid_cases = {
         "valid proposed record": _base_record("proposed"),
         "valid human-reviewed record": _base_record("human_reviewed"),
         "valid active record": _base_record("active"),
         "valid BMI derived record": _derived_record("bmi"),
         "valid eGFR creatinine record": _derived_record("egfr"),
+        "valid proposed concept with source-verified profile": valid_mixed_profile,
     }
 
     invalid_cases: dict[str, dict[str, Any]] = {}
+
+    mixed_without_sources = copy.deepcopy(valid_mixed_profile)
+    mixed_without_sources["profiles"][0]["source_reference_keys"] = []
+    invalid_cases["mixed source-verified profile without sources"] = mixed_without_sources
+
+    mixed_dangling = copy.deepcopy(valid_mixed_profile)
+    mixed_dangling["profiles"][0]["source_reference_keys"] = ["s.missing"]
+    invalid_cases["mixed source-verified profile with dangling source"] = mixed_dangling
+
+    mixed_pending = copy.deepcopy(valid_mixed_profile)
+    mixed_pending["source_references"][0]["verification_status"] = "pending"
+    invalid_cases["mixed source-verified profile with pending source"] = mixed_pending
+
+    mixed_human_reviewed_pending = copy.deepcopy(mixed_pending)
+    mixed_human_reviewed_pending["profiles"][0]["profile_status"] = "human_reviewed"
+    invalid_cases[
+        "mixed human-reviewed profile with pending source"
+    ] = mixed_human_reviewed_pending
+
+    mixed_active_pending = copy.deepcopy(mixed_pending)
+    mixed_active_pending["profiles"][0]["profile_status"] = "active"
+    invalid_cases["mixed active profile with pending source"] = mixed_active_pending
     pending = _base_record("active")
     for source in pending["source_references"]:
         source["verification_status"] = "pending"
@@ -1240,6 +1285,17 @@ def run_self_test(schema: dict[str, Any] | None) -> tuple[Report, bool, dict[str
         malformed_schema_report, _ = validate_schema_instance(schema, malformed_date)
         if not malformed_schema_report.errors:
             schema_failures.append("malformed reviewed date: FormatChecker accepted invalid date")
+        mixed_empty_schema_report, _ = validate_schema_instance(schema, mixed_without_sources)
+        if not mixed_empty_schema_report.errors:
+            schema_failures.append(
+                "mixed source-verified profile without sources: Schema accepted empty source list"
+            )
+        mixed_pending_schema_report, _ = validate_schema_instance(schema, mixed_pending)
+        if mixed_pending_schema_report.errors:
+            schema_failures.append(
+                "mixed source-verified profile with pending source: "
+                + "; ".join(mixed_pending_schema_report.errors)
+            )
         for failure in schema_failures:
             report.error("schema-backed self-test", failure)
     elif not schema_available:
