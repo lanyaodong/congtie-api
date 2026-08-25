@@ -74,7 +74,7 @@
       "url": null,
       "doi": "10.1080/02640414.2020.1767348",
       "pmid": "32552580",
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-25",
       "verification_status": "content_verified",
       "note": "Wearable validation."
     },
@@ -96,7 +96,7 @@
       "url": null,
       "doi": null,
       "pmid": "33397674",
-      "access_date": "2026-08-22",
+      "access_date": "2026-08-25",
       "verification_status": "content_verified",
       "note": "Validation framework."
     },
@@ -188,7 +188,7 @@
     },
     {
       "profile_key": "heart_rate.wearable_ppg_time_series_estimate",
-      "profile_status": "proposed",
+      "profile_status": "source_verified",
       "measurement_nature": "estimated",
       "source_modality": "wearable",
       "specimen_type": null,
@@ -313,10 +313,10 @@
   ],
   "governance_metadata": {
     "created_date": "2026-08-23",
-    "last_modified_date": "2026-08-23",
+    "last_modified_date": "2026-08-25",
     "reviewed_by": [],
     "reviewed_date": null,
-    "last_source_check_date": "2026-08-22",
-    "status_note": "Pilot A proposed Registry record; not source_verified, human_reviewed, active, published, runtime-enabled or retrieval-enabled."
+    "last_source_check_date": "2026-08-25",
+    "status_note": "Source verification completed for heart_rate.wearable_ppg_time_series_estimate only. The Heart Rate RegistryConcept and heart_rate.spot_clinical Profile remain proposed. No human review, active status, publication, runtime, retrieval, rhythm diagnosis, clinical claim, threshold or action authorization."
   }
 }
